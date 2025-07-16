@@ -100,70 +100,66 @@ export const KeyBenefitsSection = ({ productData }) => {
 
   return (
     <section className="py-5 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#f8f7fc] to-white">
-      <div className='flex flex-col justify-center items-center'>
-        <h1 className="text-xl md:text-5xl font-bold text-[#1f0079] ">
-          User <span className="text-[#513897]">Benefits</span>
-        </h1>
-      </div>
-      <div className="flex flex-col md:flex-row justify-between h-fit bg-[#f8f7fc]">
-        {/* Left Column */}
-        <div className="flex-1 p-8 md:p-1 flex flex-col justify-center relative overflow-hidden bg-[#f8f7fc]">
-          <div className="max-w-lg mx-auto w-full">
+  <div className="flex flex-col justify-center items-center mb-6 md:mb-12">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1f0079] text-center">
+      User <span className="text-[#513897]">Benefits</span>
+    </h1>
+  </div>
+  
+  <div className="flex flex-col lg:flex-row justify-between items-stretch gap-0 lg:gap-8 bg-[#f8f7fc] rounded-xl px-0 sm:px-4 md:p-6">
+    {/* Left Column */}
+    <div className="w-full lg:w-1/2 px-4 sm:px-6 md:p-6 flex flex-col justify-center relative overflow-hidden bg-[#f8f7fc] rounded-lg">
+      <div className="max-w-lg mx-auto w-full">
+        <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
+          Discover how our product can transform your daily routine with these powerful benefits.
+          Each feature is carefully designed to enhance your experience.
+        </p>
 
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed mt-5">
-              Discover how our product can transform your daily routine with these powerful benefits.
-              Each feature is carefully designed to enhance your experience.
-            </p>
-
-            <div className="mt-8 mb-12 rounded-xl overflow-hidden ">
-              <img
-                src="/product/system.gif"
-                alt="Product benefits"
-                className="w-full h-72 object-cover"
-              />
-            </div>
-
-
-          </div>
-
-          {/* Decorative elements */}
-          <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#1f0079]/10"></div>
-
+        <div className="mt-4 md:mt-8 mb-6 md:mb-12 rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="/product/system.gif"
+            alt="Product benefits"
+            className="w-full h-48 sm:h-64 md:h-72 object-cover"
+          />
         </div>
+      </div>
 
-        {/* Right Column with CardSwap */}
-        <div className="flex-1 flex items-center justify-start relative bg-[#f8f7fc]">
+      {/* Decorative elements */}
+      <div className="absolute -bottom-20 -left-20 w-64 h-64 rounded-full bg-[#1f0079]/10 hidden md:block"></div>
+    </div>
 
-          <div className="relative z-10 w-full h-full flex items-center justify-center md:justify-start">
-            <CardSwap
-              cardDistance={40}
-              verticalDistance={50}
-              delay={5000}
-              pauseOnHover={true}
+    {/* Right Column with CardSwap */}
+    <div className="w-full lg:w-1/2 h-full pr-[30vw] flex items-center justify-center relative bg-[#f8f7fc] px-4 sm:px-6 md:p-6 -mt-4 lg:mt-0 min-h-[400px] sm:min-h-[500px]">
+      <div className="relative z-10 w-full h-full flex items-center justify-center -ml-2 sm:ml-0">
+        <CardSwap
+          cardDistance={40}
+          verticalDistance={50}
+          delay={5000}
+          pauseOnHover={true}
+          className="w-full"
+        >
+          {productData.keyBenefits.map((benefit) => (
+            <Card
+              key={benefit.id}
+              customClass="backdrop-blur-sm bg-white/80 w-full max-w-md mx-auto"
             >
-              {productData.keyBenefits.map((benefit) => (
-                <Card
-                  key={benefit.id}
-
-                  customClass="backdrop-blur-sm bg-white/80"
-                >
-                  <h3 className="text-lg font-semibold text-[#1f0079] mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {benefit.description}
-                  </p>
-                  <div className="flex items-center mt-3">
-                    <TiTick className="text-[#1f0079] mr-2" />
-                    <span className="text-xs text-[#513897]">Verified Benefit</span>
-                  </div>
-                </Card>
-              ))}
-            </CardSwap>
-          </div>
-        </div>
+              <h3 className="text-lg font-semibold text-[#1f0079] mb-2">
+                {benefit.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {benefit.description}
+              </p>
+              <div className="flex items-center mt-3">
+                <TiTick className="text-[#1f0079] mr-2" />
+                <span className="text-xs text-[#513897]">Verified Benefit</span>
+              </div>
+            </Card>
+          ))}
+        </CardSwap>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 };
 
