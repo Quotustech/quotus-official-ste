@@ -134,7 +134,7 @@ export const KeyBenefitsSection = ({ productData }) => {
             <CardSwap
               cardDistance={40}
               verticalDistance={50}
-              delay={4000}
+              delay={3000}
               pauseOnHover={true}
               className="w-full"
             >

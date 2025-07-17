@@ -187,7 +187,7 @@ const Footer = () => {
           <p className="text-white text-sm">
             &copy; {new Date().getFullYear()} Quotus Technologies. All rights reserved.
             <span className=" mt-2 text-xs opacity-70 flex items-center justify-center">
-              Designed with &nbsp;<FaRegHeart /> &nbsp; in India
+              Designed with &nbsp;<FaRegHeart /> &nbsp; in Quotus
             </span>
           </p>
         </motion.div>
