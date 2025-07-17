@@ -3,66 +3,17 @@ import { useState, useMemo } from "react";
 import { Search, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const faqs = [
-  {
-    id: 1,
-    question: "How does the platform handle data security?",
-    answer: "We use end-to-end encryption with AES-256 standards, regular security audits, and SOC 2 Type II compliance. All data transfers are protected with TLS 1.3 protocols.",
-    category: "Security"
-  },
-  {
-    id: 2,
-    question: "What integration options are available?",
-    answer: "Our platform offers REST API, Webhooks, and native integrations with 100+ services including Salesforce, Slack, and Microsoft Teams. SDKs are available for JavaScript, Python, and Java.",
-    category: "Integrations"
-  },
-  {
-    id: 3,
-    question: "How often are new features released?",
-    answer: "We deploy minor updates weekly and major feature releases quarterly. All updates are backward compatible and come with detailed migration guides when needed.",
-    category: "Product"
-  },
-  {
-    id: 4,
-    question: "What support options are available?",
-    answer: "We offer 24/7 email support for all plans, with live chat and phone support for enterprise customers. Response times are under 2 hours for critical issues.",
-    category: "Support"
-  },
-  {
-    id: 5,
-    question: "Can I export my data from the platform?",
-    answer: "Yes, you can export all your data in JSON, CSV, or Excel formats at any time. We also provide automated daily backups for all customer data.",
-    category: "Data"
-  },
-  {
-    id: 6,
-    question: "What compliance standards do you meet?",
-    answer: "We're compliant with GDPR, CCPA, HIPAA, and ISO 27001. Region-specific data residency options are available for EU and APAC customers.",
-    category: "Compliance"
-  },
-  {
-    id: 7,
-    question: "How does pricing scale with usage?",
-    answer: "Our pricing is usage-based with volume discounts. Enterprise plans include custom SLAs and dedicated infrastructure. Contact sales for detailed pricing tiers.",
-    category: "Pricing"
-  },
-  {
-    id: 8,
-    question: "What browsers are supported?",
-    answer: "We support Chrome, Firefox, Safari, Edge, and Opera on their latest two versions. Mobile apps are available for iOS and Android.",
-    category: "Compatibility"
-  }
-];
 
-const FaqSection = () => {
+
+const FaqSection = ({productData}) => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const navigate = useNavigate();
-  const categories = ["All", ...new Set(faqs.map(faq => faq.category))];
+  const categories = ["All", ...new Set(productData.faqs.map(faq => faq.category))];
 
   const filteredFaqs = useMemo(() => {
-    let result = faqs;
+    let result = productData.faqs;
 
     if (activeCategory !== "All") {
       result = result.filter(faq => faq.category === activeCategory);
@@ -84,7 +35,7 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="py-10 px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="py-10  bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Animated Header with SVG Background */}
         <motion.div
@@ -94,39 +45,13 @@ const FaqSection = () => {
           viewport={{ once: true }}
           className="relative flex flex-col items-center overflow-hidden rounded-2xl bg-gradient-to-r from-[#1f0079] to-[#513897] p-8 sm:p-12 mb-16 text-cente "
         >
-          {/* SVG Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <svg
-              width="100%"
-              height="100%"
-              patternUnits="userSpaceOnUse"
-              className="text-white/5"
-            >
-              <pattern
-                id="grid-pattern"
-                x="0"
-                y="0"
-                width="40"
-                height="40"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M 0 40 L 40 0"
-                  stroke="currentColor"
-                  strokeWidth="1"
-                />
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-            </svg>
-          </div>
-
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl sm:text-4xl font-bold text-white mb-6"
+            className="text-2xl sm:text-2xl font-bold text-white mb-6"
           >
-            How can we help?
+            {productData.description}
           </motion.h2>
           {/* search bar  */}
           <motion.div
@@ -161,7 +86,7 @@ const FaqSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${activeCategory === category
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${activeCategory === category
                   ? "bg-[#1f0079] text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
@@ -309,7 +234,7 @@ const FaqSection = () => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="px-8 py-3 bg-[#1f0079] text-white rounded-lg font-medium shadow-md hover:bg-[#2a0099] transition-all"
+            className="px-8 py-3 bg-[#1f0079] text-white rounded-lg font-medium shadow-md hover:bg-[#2a0099] transition-all cursor-pointer"
             onClick={() => { navigate("/contact") }}
           >
             Contact Support

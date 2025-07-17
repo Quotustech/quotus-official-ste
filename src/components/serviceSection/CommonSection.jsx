@@ -102,18 +102,6 @@ const container = {
   }
 };
 
-const item = {
-  hidden: { opacity: 0, x: -10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.3, ease: "easeOut" }
-  },
-  hover: {
-    color: "#513897",
-    transition: { duration: 0.2 }
-  }
-};
 
   return (
     <div className="min-h-screen  mt-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16  w-screen">

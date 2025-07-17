@@ -1,29 +1,29 @@
 
 import {  motion, useSpring, useTransform } from "framer-motion";
-import Balancer from "react-wrap-balancer";
-
 import { cn } from "../../lib/utils";
+import { useNavigate } from "react-router-dom";
 
 
 
 function FeatureCard({ feature, className, zIndexOffset = 0, ...props }) {
-  const { title, category, imageUrl } = feature;
+  const { title, category, imageUrl, path} = feature;
   const springValue = useSpring(0, {
     bounce: 0,
   });
   const zIndex = useTransform(springValue, (value) => +Math.floor(value * 10) + 10 + zIndexOffset);
   const scale = useTransform(springValue, [0, 1], [1, 1.1]);
+  const navigate=useNavigate();
 
   const content = (
     <>
       <img src={imageUrl} alt="" className="-z-1 absolute inset-0 h-full w-full object-cover" />
       <div className="z-10 flex h-full w-full flex-col gap-2 bg-gradient-to-t from-zinc-800/40 from-15% to-transparent p-3">
-        <small className="inline w-fit rounded-xl bg-orange-950 bg-opacity-50 px-2 py-1 text-xs font-medium leading-none text-white">
+        <small className="inline w-fit rounded-xl bg-white bg-opacity-50 px-2 py-1 text-xs font-medium leading-none text-[#1f0079]">
           {category}
         </small>
 
         <div className="flex-1" />
-        <h3 className="rounded-xl bg-blue-950 bg-opacity-30 p-3 text-base font-bold leading-none text-white backdrop-blur-sm">
+        <h3 className="rounded-xl bg-white bg-opacity-30 p-3 text-base font-bold leading-none text-[#1f0079] backdrop-blur-sm cursor-pointer" onClick={()=>{navigate(path)}}>
           {title}
         </h3>
       </div>
@@ -109,6 +109,7 @@ export default function ProductFeatures({otherServices}) {
               category: "Service",
               title: service.name,
               imageUrl: service.imageUrl,
+              path:service.path
             }}
             initial={{
               x: index === 0 ? cardWidth : index === 2 ? -cardWidth : 0,

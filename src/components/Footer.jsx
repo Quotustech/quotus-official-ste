@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FiFacebook, FiTwitter, FiLinkedin, FiInstagram, FiMail, FiPhone } from 'react-icons/fi';
 import { MdOutlineLocationOn } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa";
-import { servicesData } from "../data/ServicesData";
+import { servicesData } from "../data/servicesData";
 import { navItems } from './Navbar';
 
 const Footer = () => {

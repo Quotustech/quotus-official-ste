@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { Link, useLocation } from "react-router-dom";
 import ServicePage from "../../pages/Services";
-import { servicesData } from "../data/ServicesData";
+import { servicesData } from "../data/servicesData";
 import { useNavigate } from "react-router-dom";
 import {ourProducts} from "../data/ProductPageData";
 
@@ -199,7 +199,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full right-0 mt-2 w-[320px]"
+                        className="absolute top-full right-40 mt-2 w-[300px]"
                       >
                         <ServicePage
                           onClose={() => setShowServicesDropdown(false)}

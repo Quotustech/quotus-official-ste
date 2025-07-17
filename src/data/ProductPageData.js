@@ -24,42 +24,36 @@ export const ourProducts = [
               "Connect with agricultural tools, weather APIs, and logistics systems for streamlined workflows.",
             stats: "50+ integrations",
             icon: "/product/technology.png",
-            color: "#1f0079",
           },
           {
             title: "Real-Time Analytics",
             description:
               "AI-powered dashboards that give farmers instant insights into soil, weather, and crop health.",
             icon: "/product/technology.png",
-            color: "#513897",
           },
           {
             title: "AI Automation",
             description:
               "Automatically generate irrigation schedules and pest alerts based on drone scans and sensor data.",
             icon: "/product/technology.png",
-            color: "#3a1c6e",
           },
           {
             title: "Secure Platform",
             description:
               "Blockchain ensures data authenticity, traceability, and farmer ownership of agricultural records.",
             icon: "/product/technology.png",
-            color: "#1f0079",
           },
           {
             title: "Collaborative Farming Tools",
             description:
               "Farmers, buyers, and governments can interact on a shared, tamper-proof platform.",
             icon: "/product/technology.png",
-            color: "#513897",
           },
           {
             title: "Smart Contracts",
             description:
               "Enable automatic payouts, subsidies, and marketplace deals with Ethereum-based contracts.",
             icon: "/product/technology.png",
-            color: "#3a1c6e",
           },
         ],
       },
@@ -98,106 +92,227 @@ export const ourProducts = [
           }
         ],
       },
-    },
-  
-    {
-      slug: "ocrpro",
-      name: "Crypto Gaming ",
-      productHeadingSection: {
-        name: "Crypto Gaming ",
-        navIcon: "https://5.imimg.com/data5/SELLER/Default/2024/7/435989702/JK/CN/UP/10308570/nature-hd-wallpaper.jpg",
-        pathUrl:"/product/ocrpro",
-        bgImage: "https://cdn.pixabay.com/video/2021/09/27/89894-616430996_tiny.jpg",
-        heading: "Play. Earn. Conquer the Blockchain.",
-        subheading: "A next-gen gaming experience powered by crypto",
-        description:
-          "CryptoPlay brings immersive gameplay and real-time rewards on the blockchain, giving users control, ownership, and excitement like never before.",
-      },
-      featureSection: {
-        heading: "Gamify the Blockchain Experience",
-        description:
-          "Our engine offers fast blockchain integration, real-time multiplayer, NFT minting, and token economy control — all out of the box.",
-        features: [
-          {
-            title: "On-Chain Game Engine",
-            description:
-              "Run real-time game logic on EVM-compatible blockchains for transparency and trust.",
-            stats: "Live on 3 chains",
-            icon: "/product/gaming.png",
-            color: "#0d9488",
-          },
-          {
-            title: "NFT Minting System",
-            description:
-              "Seamlessly mint, manage, and trade in-game assets as NFTs with custom metadata.",
-            icon: "/product/gaming.png",
-            color: "#6b21a8",
-          },
-          {
-            title: "Wallet Integration",
-            description:
-              "Support for MetaMask, WalletConnect, and custom wallets. Enable sign-in and transactions instantly.",
-            icon: "/product/gaming.png",
-            color: "#4f46e5",
-          },
-          {
-            title: "Token Rewards Engine",
-            description:
-              "Distribute in-game tokens based on gameplay, achievements, or staking logic.",
-            icon: "/product/gaming.png",
-            color: "#f59e0b",
-          },
-          {
-            title: "Anti-Cheat and Fairness",
-            description:
-              "Ensure secure, fair gameplay using cryptographic proofs and smart contract logic.",
-            icon: "/product/gaming.png",
-            color: "#ef4444",
-          },
-          {
-            title: "Cross-Platform Support",
-            description:
-              "Use our SDK to deploy on mobile, browser, or desktop games with the same Web3 backend.",
-            icon: "/product/gaming.png",
-            color: "#1e40af",
-          },
-        ],
-      },
-      productBenefits: {
-        image: "/images/products/cryptoplay-bg.jpg",
-        keyBenefits: [
+      faqSection: {
+        heading: "Frequently Asked Questions",
+        description: "Find answers to common questions about NaturalPure and how it supports smart farming through blockchain and automation.",
+        faqs: [
           {
             id: 1,
-            title: "Decentralized Gameplay",
-            description:
-              "Own in-game assets through blockchain integration and NFTs that can't be manipulated.",
+            question: "How does NaturalPure help farmers?",
+            answer:
+              "NaturalPure provides farmers with real-time data on crop health, weather conditions, and irrigation needs using drones and AI, helping them make smarter decisions.",
+            category: "Usage",
           },
           {
             id: 2,
-            title: "Seamless Wallet Integration",
-            description:
-              "Connect MetaMask and other wallets instantly for real-time crypto transactions.",
+            question: "Is any technical knowledge required to use the platform?",
+            answer:
+              "No, NaturalPure is designed to be user-friendly for farmers. Our interface is simple, visual, and available in multiple local languages.",
+            category: "Accessibility",
           },
           {
             id: 3,
-            title: "Play-to-Earn Mechanics",
-            description:
-              "Earn tokens, NFTs, and achievements by completing tasks, missions, or staking.",
+            question: "How is blockchain used in NaturalPure?",
+            answer:
+              "Blockchain is used to store farming data, transactions, and supply chain records immutably. It ensures trust, traceability, and transparency.",
+            category: "Technology",
           },
           {
             id: 4,
-            title: "Developer Friendly APIs",
-            description:
-              "Get started quickly with SDKs for Unity, Unreal, and WebGL. Build faster with our docs.",
+            question: "Can I track my produce from farm to market?",
+            answer:
+              "Yes, NaturalPure includes a blockchain-based supply chain tracker that allows end-to-end visibility from seed to sale.",
+            category: "Supply Chain",
           },
           {
             id: 5,
-            title: "Scalable Infrastructure",
+            question: "Is my data secure and private?",
+            answer:
+              "Yes. All data is encrypted and owned by the farmer. No third-party can access or modify it without your permission.",
+            category: "Security",
+          },
+          {
+            id: 6,
+            question: "Do I need to buy drones to use NaturalPure?",
+            answer:
+              "Not necessarily. You can integrate your own drone or opt for our drone-as-a-service (DaaS) model depending on your region.",
+            category: "Hardware",
+          },
+          {
+            id: 7,
+            question: "What kind of crops does the platform support?",
+            answer:
+              "NaturalPure is crop-agnostic and works well with grains, vegetables, fruits, and more. The AI adapts to each farming model.",
+            category: "Crops",
+          },
+          {
+            id: 8,
+            question: "Is government support or subsidy integrated?",
+            answer:
+              "Yes, smart contracts can automate subsidy disbursements and grant eligibility based on verifiable data on the blockchain.",
+            category: "Compliance",
+          }
+        ]
+      }
+      
+    },
+  
+    {
+      slug: "arthaProAi",
+      name: "Artha Pro AI",
+      productHeadingSection: {
+        name: "Artha Pro AI",
+        navIcon: "/product/allProducts/artha/arthaLogo.png",
+        pathUrl: "/product/arthaProAi",
+        bgImage: "/product/allProducts/artha/arthaEntroImg.jpeg",
+        heading: "Play. Win. Earn. On the Blockchain.",
+        subheading: "One Crypto Arcade. Endless Games. Real Rewards.",
+        description:
+          "Artha Pro AI is a next-gen crypto gaming platform offering fast-paced games like Aviator, Minesweeper, and Plinko. Deposit, play, win tokens, and withdraw — all with transparent on-chain fairness and full control through the back office dashboard.",
+      },
+    
+      featureSection: {
+        heading: "Everything You Need to Run a Web3 Arcade",
+        description:
+          "From wallet integration to game economy management, Artha Pro AI is your all-in-one crypto gaming solution built for performance, fairness, and scale.",
+        features: [
+          {
+            title: "Multi-Game Engine",
             description:
-              "Our backend scales to handle thousands of players using modern distributed architecture.",
+              "Support for multiple game types like Aviator, Minesweeper, and Plinko with shared wallet & token systems.",
+            icon: "/product/allProducts/artha/featureIcons/gamepad.png",
+          },
+          {
+            title: "Native Token Deposit",
+            description:
+              "Players can deposit native blockchain tokens (e.g., ETH, MATIC) which are auto-converted into in-game tokens.",
+            icon: "/product/allProducts/artha/featureIcons/cryptocurrency .png",
+          },
+          {
+            title: "Bonus System",
+            description:
+              "Offer bonuses, free plays based rewards to increase engagement and retention.",
+            icon: "/product/allProducts/artha/featureIcons/bonus.png",
+          },
+          {
+            title: "On-Chain Fairness",
+            description:
+              "Every outcome is powered by smart contracts or verifiable randomness to ensure transparency.",
+            icon: "/product/allProducts/artha/featureIcons/blockchain .png",
+          },
+          {
+            title: "Crypto Reward Withdrawal",
+            description:
+              "Players can withdraw their winnings to their wallets after playing — fast, gas-efficient payouts.",
+            icon: "/product/allProducts/artha/featureIcons/withdraw.png",
+          },
+          {
+            title: "Back Office Control",
+            description:
+              "Manage players, set odds, control token supply and adjust bonuses through an intuitive admin dashboard.",
+               icon: "/product/allProducts/artha/featureIcons/home.png",
           },
         ],
       },
-    },
+    
+      productBenefits: {
+        image: "/images/products/artha-bg.jpg",
+        keyBenefits: [
+          {
+            id: 1,
+            title: "Multiple Games, One Wallet",
+            description:
+              "Players use a single wallet to play all games — from Aviator to Plinko — making onboarding smooth and fast.",
+          },
+          {
+            id: 2,
+            title: "Tokenized Economy",
+            description:
+              "Native tokens are converted into in-game credits, enabling real-time economy control and analytics.",
+          },
+          {
+            id: 3,
+            title: "Scalable Game Infrastructure",
+            description:
+              "Microfrontend-based architecture lets you add or remove games without affecting the entire platform.",
+          },
+          {
+            id: 4,
+            title: "Secure & Verifiable Gameplay",
+            description:
+              "Every play session and win logic is secured with cryptographic proofs and can be audited anytime.",
+          },
+          {
+            id: 5,
+            title: "Complete Admin Control",
+            description:
+              "Set bonuses, control RTP (return to player), track transactions, block users, and more with the BO dashboard.",
+          },
+        ],
+      },
+      faqSection: {
+        heading: "Frequently Asked Questions",
+        description: "Here are some common questions about Artha Pro AI and how the platform works.",
+        faqs: [
+          {
+            id: 1,
+            question: "How do I deposit crypto into the game?",
+            answer:
+              "You can deposit supported cryptocurrencies like ETH and MATIC directly from your wallet. These are automatically converted into in-game tokens for gameplay.",
+            category: "Deposits",
+          },
+          {
+            id: 2,
+            question: "Can I withdraw my earnings?",
+            answer:
+              "Yes, once your in-game balance reaches the withdrawal threshold, you can send tokens directly to your wallet using the withdrawal panel.",
+            category: "Withdrawals",
+          },
+          {
+            id: 3,
+            question: "Are the games provably fair?",
+            answer:
+              "Yes. All game outcomes are generated using verifiable smart contracts and random number generators to ensure fairness.",
+            category: "Fairness",
+          },
+          {
+            id: 4,
+            question: "How are bonus codes or rewards handled?",
+            answer:
+              "Bonus codes can be entered before play. Eligible users receive extra tokens or free plays, which are credited automatically.",
+            category: "Bonuses",
+          },
+          {
+            id: 5,
+            question: "What wallets are supported?",
+            answer:
+              "MetaMask, WalletConnect, and other Web3 wallets are fully supported for deposits, withdrawals, and gameplay authentication.",
+            category: "Wallets",
+          },
+          {
+            id: 6,
+            question: "Is the platform secure and compliant?",
+            answer:
+              "Yes, all transactions are encrypted and handled via smart contracts. We adhere to major compliance standards and data privacy laws.",
+            category: "Security",
+          },
+          {
+            id: 7,
+            question: "How can I contact support?",
+            answer:
+              "You can reach us via live chat or email. Enterprise users have access to dedicated account managers.",
+            category: "Support",
+          },
+          {
+            id: 8,
+            question: "Can I play on mobile?",
+            answer:
+              "Yes, the platform is fully responsive and optimized for mobile devices, with a smooth experience across phones and tablets.",
+            category: "Compatibility",
+          },
+        ],
+      }
+    }
+    
   ];
   

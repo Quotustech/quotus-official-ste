@@ -40,13 +40,13 @@ function Product() {
       )}
 
       {productData && (
-        <div>
+        <div className='py- px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16'> 
 
           <ProductDetails productData={productData.productHeadingSection} />
           <FeatureSection productData={productData.featureSection}/>
           {/* <HowItWorks/> */}
           <KeyBenefitsSection productData={productData.productBenefits} />
-          <Faq/>
+          <Faq productData={productData.faqSection}/>
           {/* <BookDemo/> */}
         </div>
       )}

@@ -37,7 +37,7 @@ function ContactForm() {
      setIsSending(true);
     setTimeout(() => {
       const { name, email, subject, message } = formData;
-      window.location.href = `mailto:sibasisroutray21@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+      window.location.href = `mailto:info@quotus.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
         `Name: ${name}\nEmail: ${email}\n\n${message}`
       )}`;
 
@@ -77,7 +77,7 @@ function ContactForm() {
         </div>
 
         {/* Tab Content */}
-        <div className="relative h-[500px]">
+        <div className="relative h-[600px]">
           {/* Email Form */}
           <motion.div className="absolute inset-0 p-8 md:p-10">
             <form className="space-y-6" onSubmit={handleSubmit}>
@@ -163,7 +163,7 @@ function ContactForm() {
 
               <RippleButton>
                 <button 
-                  className='flex gap-5 justify-center text-center items-center w-full' 
+                  className='flex gap-5 justify-center text-center items-center w-screen' 
                   type="submit"
                   disabled={isSending}
                 >

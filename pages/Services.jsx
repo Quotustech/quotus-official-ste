@@ -1,11 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import {servicesData} from "../src/data/ServicesData";
+import {servicesData} from "../src/data/servicesData";
 
 
 const ServicesPage = ({ onClose }) => {
-  const [activeItemKey, setActiveItemKey] = useState(null);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
@@ -86,7 +85,7 @@ const ServicesPage = ({ onClose }) => {
         }}
       >
         {/* service menue on hover */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
           {servicesData.map((service, idx) => (
             <motion.div
               key={idx}
@@ -94,13 +93,13 @@ const ServicesPage = ({ onClose }) => {
                 backgroundColor: "rgba(249, 245, 255, 1)",
                 transition: { duration: 0.2 }
               }}
-              className="group rounded-lg p-4 -m-4 "
+              className="group rounded-lg p-4 -m-4  "
             >
               <motion.div
                 whileHover={{ x: 3 }}
                 onClick={() => handleNavigation(service.path)}
                 className="font-semibold text-[#1f0079]  flex items-center gap-3 mb-3 cursor-pointer"
-              >
+              > 
                 <motion.span 
                   whileHover={{ scale: 1.1 }}
                   className="p-2 bg-[#f0ebff] rounded-lg group-hover:bg-[#e0d6ff]"
@@ -126,7 +125,7 @@ const ServicesPage = ({ onClose }) => {
                     key={i}
                     variants={listItemVariants}
                     whileHover="hover"
-                    className="text-gray-600 cursor-pointer flex items-start"
+                    className="text-gray-600 cursor-pointer flex items-start "
                     onClick={(e) => {
                       e.stopPropagation(); handleNavigationToSubHeadings(service.path,service.id)
                     }}
@@ -167,7 +166,7 @@ const ServicesPage = ({ onClose }) => {
             }}
             className="text-sm text-gray-500 inline-block cursor-pointer"
           >
-            Need help choosing? <span className="text-[#513897] font-medium">Contact our team</span>
+            Need help in choosing? <span className="text-[#513897] font-medium">Contact our team</span>
           </motion.div>
         </motion.div>
       </motion.div>
