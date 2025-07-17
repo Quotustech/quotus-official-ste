@@ -101,19 +101,19 @@ function OurClients() {
                     className={`
                     aspect-square flex items-center justify-center bg-white w-full h-30 p-0 m-0
                     relative overflow-hidden
-                    ${isLeftCol ? "border-l-2 border-[#1f0079]/30 group-hover:border-transparent" : ""}
-                    ${isMiddleRow ? "border-t-2 border-b-2 border-[#1f0079]/30 group-hover:border-transparent" : ""}
+                    ${isLeftCol ? "border-l-1 border-[#1f0079]/30 group-hover:border-transparent" : ""}
+                    ${isMiddleRow ? "border-t-1 border-b-1 border-[#1f0079]/30 group-hover:border-transparent" : ""}
                   `}
                   >
                     {/* Animated border for left column */}
                     {isLeftCol && (
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-blue-400 transform scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-500 ease-out" />
+                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#513897]/60 transform scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-500 ease-out" />
                     )}
                     {/* Animated borders for middle row */}
                     {isMiddleRow && (
                       <>
-                        <div className="absolute top-0 left-0 right-0 h-0.5 bg-blue-400 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
-                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-400 transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-out" />
+                        <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#513897]/60 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#513897]/60 transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-out" />
                       </>
                     )}
                     <img
