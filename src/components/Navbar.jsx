@@ -15,6 +15,7 @@ export const navItems = [
   { name: "Gallery", href: "/gallery" },
   { name: "Product", href: "/product", hasDropdown: true },
   { name: "Contact", href: "/contact" },
+  { name: "Vlogs", href: "/vlogs" },
 ];
 
 
