@@ -102,7 +102,7 @@ export default function Navbar() {
                 >
                   <div className="relative flex items-center justify-center">
                     <img
-                      src="https://quotus.co.in/static/media/logosmall.415b9ba4b0b4c8d554a5.png"
+                      src="/QuotusLOGO.png"
                       alt="Logo"
                       className="object-contain h-10"
                     />

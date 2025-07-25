@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 const PageNotFound = () => {
-    const navigate = useNavigate();
 
     // Floating 404 text
     const floatText = {
@@ -16,8 +14,8 @@ const PageNotFound = () => {
 
     return (
         <div className="min-h-screen bg-white flex flex-col items-center justify-center p-6 text-center">
-             {/* Subtle decorative elements */}
-             <div className="absolute left-0 right-0 flex justify-center space-x-4">
+            {/* Subtle decorative elements */}
+            <div className="absolute left-0 right-0 flex justify-center space-x-4">
                 {[...Array(3)].map((_, i) => (
                     <motion.div
                         key={i}
@@ -51,9 +49,7 @@ const PageNotFound = () => {
                         className="object-contain h-full w-full"
                     />
                 </div>
-                
             </motion.div>
-
             {/* Error message */}
             <div className="max-w-md mx-auto mb-10">
                 <h2 className="text-2xl font-medium text-gray-800 mb-3">
@@ -63,10 +59,6 @@ const PageNotFound = () => {
                     The page you're looking for doesn't exist or may have been moved.
                 </p>
             </div>
-
-           
-
-           
         </div>
     );
 };
