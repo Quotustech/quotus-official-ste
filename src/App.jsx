@@ -1,8 +1,8 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import AppRoutes from '../routes/AppRoutes';
-import SmoothScroll from './components/layout/SmoothScroll';
-import ScrollToTop from './components/layout/ScrollToTop';
+import SmoothScroll from './components/overlays/SmoothScroll';
+import ScrollToTop from './components/overlays/ScrollToTop';
 
 function App() {
   return (

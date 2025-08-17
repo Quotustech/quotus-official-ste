@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { TiTick } from "react-icons/ti";
-import CardSwap, { Card } from "../layout/CardSwap";
+import CardSwap, { Card } from "../ui/CardSwap";
 
 export const KeyBenefitsSection = ({ productData }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);

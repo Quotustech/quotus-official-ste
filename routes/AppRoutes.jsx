@@ -35,7 +35,7 @@ export default function AppRoutes() {
       <Route path="/gallery" element={<Gallery />} />
       <Route path="/product/*" element={<Product />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/vlogs" element={<Vlog />} />
+      {/* <Route path="/vlogs" element={<Vlog />} /> */}
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
        {/* unmatched paths */}

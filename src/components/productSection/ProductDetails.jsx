@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-import RippleButton from "../layout/RippleButton";
+import RippleButton from "../overlays/RippleButton";
 import { Navigate, useNavigate } from "react-router-dom";
 
 export const ProductDetails = ({ productData }) => {

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import RippleButton from "../layout/RippleButton";
+import RippleButton from "../overlays/RippleButton";
 import { useNavigate, useLocation } from "react-router-dom";
-import ProductFeatures from "../layout/AdditionalServices";
+import ProductFeatures from "../ui/AdditionalServices";
 
 const CommonSection = ({ data }) => {
   const navigate = useNavigate();
@@ -169,7 +169,7 @@ const CommonSection = ({ data }) => {
             {data.section1.cta && (
               <motion.div
                 className="w-full lg:w-[20vw]"
-                onClick={() => navigate("/product")}
+                onClick={() => navigate("/product/naturopura")}
                 variants={contentVariants}
               >
                 <RippleButton>{data.section1.cta}</RippleButton>

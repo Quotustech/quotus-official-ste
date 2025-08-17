@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMessageSquare } from "react-icons/fi";
-import RippleButton from "../layout/RippleButton";
+import RippleButton from "../overlays/RippleButton";
 import { Link } from "react-router-dom";
 
 function CTA() {

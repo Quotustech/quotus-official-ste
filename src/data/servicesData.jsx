@@ -187,7 +187,7 @@ export const servicesData = [
       image: "/service/webDevelopment/webDev.jpeg",
       title: "Robust & Scalable Web Development",
       description: "We engineer fast, secure, and scalable web applications tailored to your business needs. Our full-stack expertise ensures seamless integration between frontend and backend with top-notch performance.",
-      cta: "Explore Our Web Solutions"
+      cta: "Get Started"
     },
     section2: {
       title: "Our Web Development Services",
@@ -341,7 +341,7 @@ export const servicesData = [
       image: "/service/ai/aiBg.jpg",
       title: "AI That Thinks For You",
       description: "Our AI solutions harness machine learning and natural language processing to automate workflows, predict outcomes, and generate insights. We bridge data and decisions using intelligent models.",
-      cta: "Talk to Our AI Team"
+      cta: "View our works"
     },
     section2: {
       title: "Our AI Capabilities",

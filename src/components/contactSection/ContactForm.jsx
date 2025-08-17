@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMail, FiCheck } from "react-icons/fi";
-import RippleButton from '../layout/RippleButton';
+import RippleButton from '../overlays/RippleButton';
 
 function ContactForm() {
   const [isSending, setIsSending] = useState(false);

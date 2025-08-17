@@ -15,7 +15,7 @@ export const navItems = [
   { name: "Gallery", href: "/gallery" },
   { name: "Product", href: "/product/naturopura", hasDropdown: true },
   { name: "Contact", href: "/contact" },
-  { name: "Vlogs", href: "/vlogs" },
+  // { name: "Vlogs", href: "/vlogs" },
 ];
 
 

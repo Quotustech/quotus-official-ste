@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import FancyTestimonialsSlider from "../layout/testimonalslider";
+import FancyTestimonialsSlider from "../ui/testimonalslider";
 import { testimonials, flags, clients } from "../../data/ourClientSectionData";
 function OurClients() {
   // Calculate total width needed for seamless looping
