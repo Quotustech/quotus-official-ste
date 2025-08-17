@@ -1,95 +1,10 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import { TiTick } from "react-icons/ti";
-import CardSwap, { Card } from '../layout/CardSwap';
-
+import CardSwap, { Card } from "../layout/CardSwap";
 
 export const KeyBenefitsSection = ({ productData }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-
-  // Animation variants for the section
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
-
-  // Animation variants for individual benefit items
-  const benefitVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  // Animation variants for the image container
-  const imageContainerVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  // Animation variants for the background
-  const bgVariants = {
-    hidden: { opacity: 0, scale: 1.05, rotate: -5 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: -3,
-      transition: {
-        duration: 1.2,
-        ease: 'easeOut',
-        type: 'spring',
-        stiffness: 80,
-      },
-    },
-  };
-
-  // Animation variants for the image
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 30 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: 'easeOut',
-        type: 'spring',
-        stiffness: 120,
-      },
-    },
-  };
-
-  // Placeholder animation for loading state
-  const placeholderVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 0.4,
-      transition: {
-        duration: 0.6,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut',
-      },
-    },
-  };
 
   // Handle image load
   useEffect(() => {
@@ -101,9 +16,35 @@ export const KeyBenefitsSection = ({ productData }) => {
   return (
     <section className="py-5  bg-gradient-to-b from-[#f8f7fc] to-white">
       <div className="flex flex-col justify-center items-center mb-6 md:mb-0">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1f0079] text-center">
-          User <span className="text-[#513897]">Benefits</span>
-        </h1>
+        <motion.h2
+          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-3 md:mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+            initial={{ backgroundPosition: "0% 50%" }}
+            animate={{
+              backgroundPosition: "100% 50%",
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear",
+              },
+            }}
+          >
+            User
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Benefits
+          </motion.span>
+        </motion.h2>
       </div>
 
       <div className="flex flex-col lg:flex-row justify-between items-stretch gap-0 lg:gap-8 bg-[#f8f7fc] rounded-xl ">
@@ -111,8 +52,9 @@ export const KeyBenefitsSection = ({ productData }) => {
         <div className="w-full lg:w-1/2  flex flex-col justify-center relative overflow-hidden bg-[#f8f7fc] rounded-lg">
           <div className="max-w-lg mx-auto w-full">
             <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed">
-              Discover how our product can transform your daily routine with these powerful benefits.
-              Each feature is carefully designed to enhance your experience.
+              Discover how our product can transform your daily routine with
+              these powerful benefits. Each feature is carefully designed to
+              enhance your experience.
             </p>
 
             <div className="mt-4 md:mt-8 mb-6 md:mb-12 rounded-xl overflow-hidden ">
@@ -151,7 +93,9 @@ export const KeyBenefitsSection = ({ productData }) => {
                   </p>
                   <div className="flex items-center mt-3">
                     <TiTick className="text-[#1f0079] mr-2" />
-                    <span className="text-xs text-[#513897]">Verified Benefit</span>
+                    <span className="text-xs text-[#513897]">
+                      Verified Benefit
+                    </span>
                   </div>
                 </Card>
               ))}
@@ -162,6 +106,3 @@ export const KeyBenefitsSection = ({ productData }) => {
     </section>
   );
 };
-
-
-

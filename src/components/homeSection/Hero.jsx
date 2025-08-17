@@ -41,6 +41,7 @@ export default function HeroSection() {
   useEffect(() => {
     const animation = animate(orbitProgress, 1, {
       duration: screenSize.isMobile ? 60 : screenSize.isTablet ? 50 : 40, // Slower duration for smoother performance
+      duration: screenSize.isMobile ? 60 : screenSize.isTablet ? 50 : 40, // Slower duration for smoother performance
       repeat: Infinity,
       ease: "linear",
     });
@@ -65,6 +66,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8 }}
       >
         <motion.div
+          className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-2 mb-3 sm:mb-4 md:mb-6 bg-[#1f0079]/10 backdrop-blur-md rounded-full border border-[#513897]/20 mx-auto lg:mx-0"
           className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-2 mb-3 sm:mb-4 md:mb-6 bg-[#1f0079]/10 backdrop-blur-md rounded-full border border-[#513897]/20 mx-auto lg:mx-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -91,6 +93,7 @@ export default function HeroSection() {
             Reliable modern
           </motion.span>{" "}
           <span className="inline-block text-[#513897] text-3xl xs:text-4xl sm:text-[2.5rem] md:text-[2.75rem] lg:text-4xl xl:text-5xl">
+          <span className="inline-block text-[#513897] text-3xl xs:text-4xl sm:text-[2.5rem] md:text-[2.75rem] lg:text-4xl xl:text-5xl">
             <LetterPullUp text="Technology" className="text-lg" />
           </span>
         </motion.h1>
@@ -109,6 +112,7 @@ export default function HeroSection() {
           >
             We build reliable modern technology to empower digital transformation.
             Our engineering-first approach ensures high performance, scalability, and long-term impact.
+            We focus on product excellence, seamless delivery, and technical precision.
             We focus on product excellence, seamless delivery, and technical precision.
           </motion.p>
         </motion.div>
@@ -150,6 +154,8 @@ export default function HeroSection() {
       <div className={`relative lg:absolute ${screenSize.isMobile ? 'w-full h-64 mt-6 mb-10' : screenSize.isTablet ? 'w-full h-60 mt-8 mb-12' : 'right-0 w-1/2 h-full'} flex items-center justify-center lg:pr-12 xl:pr-16`}>
         {/* Central Object */}
         <div className="relative z-10 will-change-transform">
+        {/* Central Object */}
+        <div className="relative z-10 will-change-transform">
           <motion.div
             className={`${getResponsiveValue('w-24 h-24', 'w-32 h-32', 'w-40 h-40 lg:w-40 lg:h-40')} rounded-full bg-gradient-to-br from-[#1f0079] to-[#513897] shadow-xl shadow-[#513897]/30 flex items-center justify-center`}
             animate={{
@@ -163,7 +169,9 @@ export default function HeroSection() {
             }}
             transition={{
               duration: 12, // Slower rotation for better performance
+              duration: 12, // Slower rotation for better performance
               repeat: Infinity,
+              ease: "linear"
               ease: "linear"
             }}
           >
@@ -174,7 +182,9 @@ export default function HeroSection() {
               }}
               transition={{
                 duration: 12,
+                duration: 12,
                 repeat: Infinity,
+                ease: "linear"
                 ease: "linear"
               }}
               className={`${getResponsiveValue('text-3xl', 'text-4xl', 'text-6xl')} text-white`}
@@ -188,6 +198,7 @@ export default function HeroSection() {
         {[1, 0.75, 0.6].map((scale, orbitIndex) => (
           <motion.div
             key={orbitIndex}
+            className="absolute rounded-full will-change-transform"
             className="absolute rounded-full will-change-transform"
             style={{
               rotate: useTransform(orbitProgress, [0, 1], [0, orbitIndex % 2 === 0 ? 360 : -360]),
@@ -204,6 +215,7 @@ export default function HeroSection() {
                 return (
                   <motion.div
                     key={tech.name}
+                    className={`absolute ${tech.color} bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center border border-[#513897]/20 m-0 will-change-transform`}
                     className={`absolute ${tech.color} bg-white/90 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center border border-[#513897]/20 m-0 will-change-transform`}
                     style={{
                       x,
@@ -247,6 +259,7 @@ export default function HeroSection() {
             <motion.div
               key={`tag-${index}`}
               className={`absolute text-sm md:text-md font-medium px-2 py-2 md:px-3 md:py-3 rounded-full ${tech.color} bg-white/90 backdrop-blur-sm border border-[#513897]/20 will-change-transform`}
+              className={`absolute text-sm md:text-md font-medium px-2 py-2 md:px-3 md:py-3 rounded-full ${tech.color} bg-white/90 backdrop-blur-sm border border-[#513897]/20 will-change-transform`}
               style={{
                 x,
                 y,
@@ -254,14 +267,18 @@ export default function HeroSection() {
               animate={{
                 x: [x, x + (Math.random() * 20 - 10)], // Reduced movement range
                 y: [y, y + (Math.random() * 20 - 10)],
+                x: [x, x + (Math.random() * 20 - 10)], // Reduced movement range
+                y: [y, y + (Math.random() * 20 - 10)],
               }}
               transition={{
+                duration: 15 + Math.random() * 10, // Slower movement
                 duration: 15 + Math.random() * 10, // Slower movement
                 repeat: Infinity,
                 repeatType: "reverse",
                 ease: "easeInOut"
               }}
               whileHover={{
+                scale: 1.2, // Reduced hover scale
                 scale: 1.2, // Reduced hover scale
                 backgroundColor: "rgba(255, 255, 255, 1)",
               }}
@@ -275,11 +292,15 @@ export default function HeroSection() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
             className={`absolute top-1/2 left-1/2 ${getResponsiveValue('w-48 h-48', 'w-64 h-64', 'w-96 h-96 lg:w-[500px] lg:h-[500px]')} rounded-full bg-[#513897] blur-3xl opacity-10 will-change-transform`}
+            className={`absolute top-1/2 left-1/2 ${getResponsiveValue('w-48 h-48', 'w-64 h-64', 'w-96 h-96 lg:w-[500px] lg:h-[500px]')} rounded-full bg-[#513897] blur-3xl opacity-10 will-change-transform`}
             animate={{
+              scale: [1, 1.3, 1], // Reduced scale animation
+              opacity: [0.1, 0.12, 0.1], // Reduced opacity variation
               scale: [1, 1.3, 1], // Reduced scale animation
               opacity: [0.1, 0.12, 0.1], // Reduced opacity variation
             }}
             transition={{
+              duration: 16, // Slower animation
               duration: 16, // Slower animation
               repeat: Infinity,
               ease: "easeInOut"
@@ -288,14 +309,19 @@ export default function HeroSection() {
           {screenSize.isDesktop && (
             <motion.div
               className="absolute top-1/2 left-1/2 w-[300px] h-[300px] rounded-full bg-[#1f0079] blur-2xl opacity-5 will-change-transform"
+              className="absolute top-1/2 left-1/2 w-[300px] h-[300px] rounded-full bg-[#1f0079] blur-2xl opacity-5 will-change-transform"
               animate={{
+                scale: [1, 1.2, 1], // Reduced scale animation
+                opacity: [0.05, 0.07, 0.05], // Reduced opacity variation
                 scale: [1, 1.2, 1], // Reduced scale animation
                 opacity: [0.05, 0.07, 0.05], // Reduced opacity variation
               }}
               transition={{
                 duration: 12, // Slower animation
+                duration: 12, // Slower animation
                 repeat: Infinity,
                 ease: "easeInOut",
+                delay: 4 // Longer delay
                 delay: 4 // Longer delay
               }}
             />
@@ -315,20 +341,29 @@ export default function HeroSection() {
 
         {/* Floating Particles - Reduced count */}
         {[...Array(getResponsiveValue(10, 20, 30))].map((_, i) => (
+        {/* Floating Particles - Reduced count */}
+        {[...Array(getResponsiveValue(10, 20, 30))].map((_, i) => (
           <motion.div
             key={i}
             className={`absolute rounded-full ${i % 4 === 0 ? "bg-[#1f0079]" : i % 4 === 1 ? "bg-[#513897]" : i % 4 === 2 ? "bg-[#1f0079]" : "bg-[#513897]"} will-change-transform`}
+            className={`absolute rounded-full ${i % 4 === 0 ? "bg-[#1f0079]" : i % 4 === 1 ? "bg-[#513897]" : i % 4 === 2 ? "bg-[#1f0079]" : "bg-[#513897]"} will-change-transform`}
             style={{
+              width: `${Math.random() * (screenSize.isMobile ? 2 : screenSize.isTablet ? 2 : 3) + 1}px`, // Smaller particles
+              height: `${Math.random() * (screenSize.isMobile ? 2 : screenSize.isTablet ? 2 : 3) + 1}px`,
               width: `${Math.random() * (screenSize.isMobile ? 2 : screenSize.isTablet ? 2 : 3) + 1}px`, // Smaller particles
               height: `${Math.random() * (screenSize.isMobile ? 2 : screenSize.isTablet ? 2 : 3) + 1}px`,
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               opacity: screenSize.isMobile ? 0.1 : screenSize.isTablet ? 0.2 : 0.3, // Lower opacity
+              opacity: screenSize.isMobile ? 0.1 : screenSize.isTablet ? 0.2 : 0.3, // Lower opacity
             }}
             animate={{
               x: [0, Math.random() * 30 - 15], // Reduced movement range
               y: [0, Math.random() * 30 - 15],
+              x: [0, Math.random() * 30 - 15], // Reduced movement range
+              y: [0, Math.random() * 30 - 15],
               transition: {
+                duration: Math.random() * 20 + 15, // Slower movement
                 duration: Math.random() * 20 + 15, // Slower movement
                 repeat: Infinity,
                 repeatType: "reverse",
@@ -336,6 +371,8 @@ export default function HeroSection() {
             }}
           />
         ))}
+
+        
 
         
 

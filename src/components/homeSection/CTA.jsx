@@ -24,33 +24,35 @@ function CTA() {
           className="text-center"
         >
           {/* Heading  */}
+
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight text-[#1f0079]"
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-4"
             initial={{ opacity: 0 }}
-            animate={inView ? { opacity: 1 } : {}}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Ready to{" "}
             <motion.span
-              className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent"
+              className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
               initial={{ backgroundPosition: "0% 50%" }}
-              animate={
-                inView
-                  ? {
-                    backgroundPosition: "100% 50%",
-                    transition: {
-                      duration: 6,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "linear",
-                    },
-                  }
-                  : {}
-              }
+              animate={{
+                backgroundPosition: "100% 50%",
+                transition: {
+                  duration: 6,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                },
+              }}
             >
-              Transform
+              Ready to Transform
             </motion.span>{" "}
-            Your Business?
+            <motion.span
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              Your Business?
+            </motion.span>
           </motion.h2>
 
           {/* sub heading */}
@@ -69,9 +71,7 @@ function CTA() {
             to="/contact"
             className="inline-block px-10 py-3 md:px-10 md:py-4"
           >
-            <RippleButton >
-              Contact Now
-            </RippleButton>
+            <RippleButton>Contact Now</RippleButton>
           </Link>
 
           {/* Contact  */}
@@ -86,11 +86,7 @@ function CTA() {
               { icon: <FiPhone size={24} />, text: "+91 9777403555" },
               { icon: <FiMessageSquare size={24} />, text: "Live Chat" },
             ].map((item, i) => (
-              <motion.div
-                key={i}
-                className="flex flex-col items-center group"
-
-              >
+              <motion.div key={i} className="flex flex-col items-center group">
                 <div className="w-12 h-12 flex items-center justify-center bg-[#1f0079]/10 rounded-full text-[#1f0079] group-hover:bg-[#513897]/20 group-hover:text-[#513897] transition-colors duration-300 mb-2">
                   {item.icon}
                 </div>

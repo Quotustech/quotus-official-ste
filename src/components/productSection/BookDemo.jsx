@@ -110,25 +110,7 @@ export const BookDemo = () => {
           </motion.p>
         </div>
 
-        <motion.div
-          className="bg-white p-8 rounded-3xl border border-gray-100 shadow-xl hover:shadow-2xl transition-shadow duration-300 max-w-xl mx-auto"
-          variants={formVariants}
-          whileHover={{ scale: 1.02 }}
-          transition={{ type: 'spring', stiffness: 300 }}
-        >
-          <div className="flex flex-col sm:flex-row gap-4">
-            <motion.input
-              type="email"
-              value={email}
-              onChange={handleEmailChange}
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#513897] text-gray-700"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              required
-            />
-            <motion.button
+        <motion.button
               onClick={handleSubmit}
               className="px-6 py-3 bg-gradient-to-r from-[#1f0079] to-[#513897] text-white rounded-lg font-semibold hover:from-[#1f0079]/90 hover:to-[#513897]/90 transition-colors duration-300"
               whileHover={{ scale: 1.05 }}
@@ -137,8 +119,6 @@ export const BookDemo = () => {
             >
               Book Now
             </motion.button>
-          </div>
-        </motion.div>
       </motion.div>
     </section>
   );

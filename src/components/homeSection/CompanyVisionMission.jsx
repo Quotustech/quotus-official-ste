@@ -87,12 +87,34 @@ const MissionVision = () => {
               </motion.div>
 
               <motion.h2
-                className="text-4xl md:text-5xl font-bold mb-4"
+                className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-4"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
                 variants={item}
               >
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1f0079] to-[#513897]">
-                  Mission & Vision
-                </span>
+                <motion.span
+                  className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+                  initial={{ backgroundPosition: "0% 50%" }}
+                  animate={{
+                    backgroundPosition: "100% 50%",
+                    transition: {
+                      duration: 6,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "linear",
+                    },
+                  }}
+                >
+                  Mission
+                </motion.span>{" "}
+                <motion.span
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  & Vision
+                </motion.span>
               </motion.h2>
 
               <motion.p
@@ -103,7 +125,6 @@ const MissionVision = () => {
               </motion.p>
             </motion.div>
 
-           
             <div className="relative z-10">
               {/* Mission & Vision Section */}
               <motion.div
@@ -118,7 +139,6 @@ const MissionVision = () => {
                   variants={popUp}
                   whileHover={cardHover}
                 >
-                 
                   <div className="absolute inset-0 bg-gradient-to-br from-[#1f0079]/90 to-[#513897]/80 z-10"></div>
                   <img
                     src="/home/mission&vision/mission.jpg"
@@ -128,12 +148,11 @@ const MissionVision = () => {
 
                   {/* Text container  */}
                   <div className="relative z-20 p-5 h-full flex flex-col justify-center">
-                     
-
                     <motion.h3
                       className="text-xl md:text-2xl font-bold text-white mb-2 flex gap-2"
                       variants={fadeIn}
-                    ><FiTarget className="text-white text-md" />
+                    >
+                      <FiTarget className="text-white text-md" />
                       Our Mission
                     </motion.h3>
 
@@ -142,33 +161,35 @@ const MissionVision = () => {
                       variants={fadeIn}
                     >
                       <p>
-                        Quotus wants to provide every business a digital platform for growth
-                        by using our innovation, ideas, creativity and technology.
+                        Quotus wants to provide every business a digital
+                        platform for growth by using our innovation, ideas,
+                        creativity and technology.
                       </p>
                       <p>
-                        We will create change for technically unprivileged businesses while
-                        helping them achieve global presence.
+                        We will create change for technically unprivileged
+                        businesses while helping them achieve global presence.
                       </p>
                     </motion.div>
 
                     <motion.ul className="space-y-1" variants={container}>
-                      {["Value creation", "Customer focus", "Global enablement"].map(
-                        (item, i) => (
-                          <motion.li
-                            key={i}
-                            className="text-white flex items-center text-xs md:text-sm"
-                            whileHover={{ x: 5 }}
-                            variants={item}
-                          >
-                            <span className="w-1.5 h-1.5 bg-white rounded-full mr-2"></span>
-                            {item}
-                          </motion.li>
-                        )
-                      )}
+                      {[
+                        "Value creation",
+                        "Customer focus",
+                        "Global enablement",
+                      ].map((item, i) => (
+                        <motion.li
+                          key={i}
+                          className="text-white flex items-center text-xs md:text-sm"
+                          whileHover={{ x: 5 }}
+                          variants={item}
+                        >
+                          <span className="w-1.5 h-1.5 bg-white rounded-full mr-2"></span>
+                          {item}
+                        </motion.li>
+                      ))}
                     </motion.ul>
                   </div>
                 </motion.div>
-
 
                 {/* Vision */}
                 <motion.div
@@ -181,11 +202,11 @@ const MissionVision = () => {
                     variants={popUp}
                     whileHover={cardHover}
                   >
-                    
                     <motion.h3
                       className="text-lg md:text-xl font-bold text-[#1f0079] mb-2 flex gap-2 items-center "
                       variants={fadeIn}
-                    ><FiEye className="text-[#1f0079] text-lg mr-1" />
+                    >
+                      <FiEye className="text-[#1f0079] text-lg mr-1" />
                       Our Vision
                     </motion.h3>
                     <motion.div
@@ -216,8 +237,7 @@ const MissionVision = () => {
                       variants={fadeIn}
                     >
                       <div className="flex items-center mb-1">
-                        
-                        <MdOutlineTouchApp className="text-white text-lg mr-1"/>
+                        <MdOutlineTouchApp className="text-white text-lg mr-1" />
                         <span className="text-white font-medium text-xs md:text-sm flex items-center">
                           Our Approach
                         </span>

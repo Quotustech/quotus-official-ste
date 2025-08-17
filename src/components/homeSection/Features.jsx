@@ -34,7 +34,7 @@ const FeatureCard = ({ icon, title, description, delay }) => {
         animate={inView ? { rotate: 0, scale: 1 } : {}}
         whileHover={{
           rotate: [0, -3, 3, 0],
-          transition: { duration: 0.4 }
+          transition: { duration: 0.4 },
         }}
         transition={{
           delay: delay * 0.15 + 0.1,
@@ -58,7 +58,7 @@ const FeatureCard = ({ icon, title, description, delay }) => {
       {/* Content area with scrollable description */}
       <div className="flex-1 overflow-y-auto">
         <motion.p
-          className="text-sm text-gray-600 pr-2" 
+          className="text-sm text-gray-600 pr-2"
           initial={{ opacity: 0, y: 10 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: delay * 0.15 + 0.3 }}
@@ -79,8 +79,6 @@ const FeatureCard = ({ icon, title, description, delay }) => {
 };
 
 const FeaturesSection = () => {
-
-
   return (
     <div className="py-20  bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       <motion.div
@@ -90,15 +88,35 @@ const FeaturesSection = () => {
         viewport={{ once: true }}
         className="text-center mb-16 max-w-4xl mx-auto"
       >
-        <motion.h2
-          className="text-3xl sm:text-4xl font-bold text-[#1f0079] mb-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          Quotus Differentiators
-        </motion.h2>
+          <motion.h2
+            className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-3 md:mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <motion.span
+              className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+              initial={{ backgroundPosition: "0% 50%" }}
+              animate={{
+                backgroundPosition: "100% 50%",
+                transition: {
+                  duration: 6,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                },
+              }}
+            >
+              Quotus
+            </motion.span>{" "}
+            <motion.span
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              Differentiators
+            </motion.span>
+          </motion.h2>
 
         <motion.p
           className="text-lg text-gray-600"
@@ -107,7 +125,8 @@ const FeaturesSection = () => {
           transition={{ delay: 0.4 }}
           viewport={{ once: true }}
         >
-          Highly proficient, propitious and cost-effective software solutions powered by innovative minds and cutting-edge technologies.
+          Highly proficient, propitious and cost-effective software solutions
+          powered by innovative minds and cutting-edge technologies.
         </motion.p>
       </motion.div>
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ProductDetails } from "../src/components/productSection/ProductDetails";
 import FeatureSection from "../src/components/productSection/FeatureSection";
-import { HowItWorks } from "../src/components/productSection/HowItWorks";
 import { KeyBenefitsSection } from "../src/components/productSection/KeyBenefitsSection";
 import { useLocation } from "react-router-dom";
 import { ourProducts } from "../src/data/ProductPageData";
@@ -44,10 +43,11 @@ function Product() {
 
           <ProductDetails productData={productData.productHeadingSection} />
           <FeatureSection productData={productData.featureSection}/>
-          {/* <HowItWorks/> */}
+          
           <KeyBenefitsSection productData={productData.productBenefits} />
-          <Faq productData={productData.faqSection}/>
           {/* <BookDemo/> */}
+          <Faq productData={productData.faqSection}/>
+          
         </div>
       )}
 

@@ -16,7 +16,7 @@ function FeatureCard({ feature, className, zIndexOffset = 0, ...props }) {
 
   const content = (
     <>
-      <img src={imageUrl} alt="" className="-z-1 absolute inset-0 h-full w-full object-cover" />
+      <img src={imageUrl} alt="" className=" absolute  h-full w-full object-cover" />
       <div className="z-10 flex h-full w-full flex-col gap-2 bg-gradient-to-t from-zinc-800/40 from-15% to-transparent p-3">
         <small className="inline w-fit rounded-xl bg-white bg-opacity-50 px-2 py-1 text-xs font-medium leading-none text-[#1f0079]">
           {category}
@@ -81,9 +81,36 @@ export default function ProductFeatures({otherServices}) {
         }}
         className="flex flex-col items-center gap-2 text-center"
       >
-         <h2 className="text-3xl md:text-4xl font-bold text-[#1f0079]">
-              Our Additional Capabilities
-            </h2>
+
+             <motion.h2
+          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-3 md:mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+            initial={{ backgroundPosition: "0% 50%" }}
+            animate={{
+              backgroundPosition: "100% 50%",
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear",
+              },
+            }}
+          >
+            Our Additional
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Capabilities
+          </motion.span>
+        </motion.h2>
        
       </motion.header>
       <motion.div

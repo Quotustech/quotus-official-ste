@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import FancyTestimonialsSlider from "../layout/testimonalslider";
-import {testimonials,flags,clients} from "../../data/ourClientSectionData"
+import { testimonials, flags, clients } from "../../data/ourClientSectionData";
 function OurClients() {
- 
   // Calculate total width needed for seamless looping
   const flagWidth = 192; // w-48 = 192px
   const gap = 24; // mx-6 = 24px
@@ -17,12 +16,36 @@ function OurClients() {
     <section className="py-20  px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       {/* Country Flags */}
       <div className="flex flex-col justify-center items-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1f0079] mb-4">
-          Client Based{" "}
-          <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">
+        <motion.h2
+          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+            initial={{ backgroundPosition: "0% 50%" }}
+            animate={{
+              backgroundPosition: "100% 50%",
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear",
+              },
+            }}
+          >
+            Client Based
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          >
             Countries
-          </span>
-        </h2>
+          </motion.span>
+        </motion.h2>
+
         <div className="relative w-full h-48 overflow-hidden bg-white rounded-xl shadow-sm border border-[#1f0079]/10">
           {/* Gradient overlays */}
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
@@ -71,20 +94,47 @@ function OurClients() {
 
       {/* Clients */}
       <div className="flex flex-col justify-center items-center mb-16 ">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1f0079] mb-4">
-          Our{" "}
-          <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">
+        <motion.h2
+          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+            initial={{ backgroundPosition: "0% 50%" }}
+            animate={{
+              backgroundPosition: "100% 50%",
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear",
+              },
+            }}
+          >
+            Our
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          >
             Clients
-          </span>
-        </h2>
+          </motion.span>
+        </motion.h2>
         <div className="flex flex-col md:flex-row justify-between items-center mb-16 mt-5  w-full">
           {/* Left side - Text content (30% width) */}
           <div className="w-full md:w-4/10 space-y-4 ">
             <h2 className="text-xl md:text-2xl font-bold text-[#1f0079]">
-              Trusted by <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">Industry Leaders</span>
+              Trusted by{" "}
+              <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">
+                Industry Leaders
+              </span>
             </h2>
             <p className="text-gray-600 text-lg">
-              We partner with innovative companies to deliver exceptional solutions.
+              We partner with innovative companies to deliver exceptional
+              solutions.
             </p>
           </div>
 
@@ -101,8 +151,16 @@ function OurClients() {
                     className={`
                     aspect-square flex items-center justify-center bg-white w-full h-30 p-0 m-0
                     relative overflow-hidden
-                    ${isLeftCol ? "border-l-1 border-[#1f0079]/30 group-hover:border-transparent" : ""}
-                    ${isMiddleRow ? "border-t-1 border-b-1 border-[#1f0079]/30 group-hover:border-transparent" : ""}
+                    ${
+                      isLeftCol
+                        ? "border-l-1 border-[#1f0079]/30 group-hover:border-transparent"
+                        : ""
+                    }
+                    ${
+                      isMiddleRow
+                        ? "border-t-1 border-b-1 border-[#1f0079]/30 group-hover:border-transparent"
+                        : ""
+                    }
                   `}
                   >
                     {/* Animated border for left column */}
@@ -139,16 +197,39 @@ function OurClients() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-xl md:text-4xl font-bold text-[#1f0079] mb-4">
-            What Our{" "}
-            <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">
-              Clients
-            </span>{" "}
-            Say
-          </h2>
+
+           <motion.h2
+          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+            initial={{ backgroundPosition: "0% 50%" }}
+            animate={{
+              backgroundPosition: "100% 50%",
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear",
+              },
+            }}
+          >
+            What Our Clients
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+           Clients Say
+          </motion.span>
+        </motion.h2>
         </motion.div>
 
-       <FancyTestimonialsSlider testimonials={testimonials} />
+        <FancyTestimonialsSlider testimonials={testimonials} />
       </div>
     </section>
   );

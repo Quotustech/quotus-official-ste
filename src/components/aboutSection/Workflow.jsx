@@ -21,9 +21,38 @@ const Workflow = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-            Our <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">Process</span>
-          </h2>
+
+           <motion.h2
+          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-3 md:mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+            initial={{ backgroundPosition: "0% 50%" }}
+            animate={{
+              backgroundPosition: "100% 50%",
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear",
+              },
+            }}
+          >
+            Our
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Process
+          </motion.span>
+        </motion.h2>
+
+
           <p className="text-sm sm:text-base text-gray-600 max-w-md mx-auto">
             Streamlined workflow for quality results
           </p>

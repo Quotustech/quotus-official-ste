@@ -79,11 +79,7 @@ const EventGallery = () => {
   return (
     <div className="min-h-screen bg-white  mt-[5%]">
       {/* intro image*/}
-      <IntroImage
-        title="Our Gallery"
-        imageUrl="/commonEntroImage.jpg"
-      />
-
+      <IntroImage title="Our Gallery" imageUrl="/commonEntroImage.jpg" />
 
       <RollingGallery images={events[0].images} />
 
@@ -101,10 +97,32 @@ const EventGallery = () => {
             >
               {/* Event Header */}
               <div className="p-8 bg-gradient-to-r from-[#1f0079]/5 to-white">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                  {event.title}
-                </h2>
-                <p className="text-[#513897] font-medium mb-3">{event.location}</p>
+                <motion.h2
+                  className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-3 md:mb-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <motion.span
+                    className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+                    initial={{ backgroundPosition: "0% 50%" }}
+                    animate={{
+                      backgroundPosition: "100% 50%",
+                      transition: {
+                        duration: 6,
+                        repeat: Infinity,
+                        repeatType: "reverse",
+                        ease: "linear",
+                      },
+                    }}
+                  >
+                    {event.title}
+                  </motion.span>
+                </motion.h2>
+
+                <p className="text-[#513897] font-medium mb-3">
+                  {event.location}
+                </p>
                 <p className="text-gray-600">{event.description}</p>
               </div>
 
@@ -117,7 +135,9 @@ const EventGallery = () => {
                 {event.images.map((image) => (
                   <motion.div
                     key={image.id}
-                    className={`relative overflow-hidden rounded-lg shadow-sm border border-gray-200  ${getSizeClass(image.size)}`}
+                    className={`relative overflow-hidden rounded-lg shadow-sm border border-gray-200  ${getSizeClass(
+                      image.size
+                    )}`}
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
@@ -157,23 +177,24 @@ const EventGallery = () => {
             </div>
 
             <div className="relative max-w-6xl w-full max-h-[90vh]">
-              {events.map((event) => (
-                event.id === expandedImage.eventId && (
-                  event.images.map((image) => (
-                    image.id === expandedImage.imageId && (
-                      <motion.img
-                        key={image.id}
-                        src={image.url}
-                        alt={`Expanded view - ${event.title}`}
-                        className="w-full h-full max-h-[80vh] object-contain"
-                        initial={{ scale: 0.9 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.3 }}
-                      />
-                    )
-                  ))
-                )
-              ))}
+              {events.map(
+                (event) =>
+                  event.id === expandedImage.eventId &&
+                  event.images.map(
+                    (image) =>
+                      image.id === expandedImage.imageId && (
+                        <motion.img
+                          key={image.id}
+                          src={image.url}
+                          alt={`Expanded view - ${event.title}`}
+                          className="w-full h-full max-h-[80vh] object-contain"
+                          initial={{ scale: 0.9 }}
+                          animate={{ scale: 1 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      )
+                  )
+              )}
             </div>
           </motion.div>
         )}

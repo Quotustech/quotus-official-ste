@@ -21,13 +21,46 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
           className="text-center mb-6 md:mb-8"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-            Why <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">Choose Us</span>
-          </h2>
+
+           <motion.h2
+          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-3 md:mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <motion.span
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
+            initial={{ backgroundPosition: "0% 50%" }}
+            animate={{
+              backgroundPosition: "100% 50%",
+              transition: {
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "linear",
+              },
+            }}
+          >
+            Why
+          </motion.span>{" "}
+          <motion.span
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Choose Us
+          </motion.span>
+        </motion.h2>
+          
           <p className="text-sm md:text-base text-gray-600 max-w-md mx-auto">
             Pioneering digital transformation with cutting-edge solutions
           </p>
         </motion.div>
+        
+
+        
+
+
 
         {/* Content Grid - Adjusted spacing */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
