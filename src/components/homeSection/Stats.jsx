@@ -5,8 +5,8 @@ import { InView } from 'react-intersection-observer';
 
 function Stats() {
   const stats = [
-    { value: 250, label: "Happy Clients" },
-    { value: 500, label: "Projects Completed" },
+    { value: 15, label: "Happy Clients" },
+    { value: 50, label: "Projects Completed" },
     { value: 99, label: "Client Satisfaction" },
     { value: "24/7", label: "Support Available" }
   ];

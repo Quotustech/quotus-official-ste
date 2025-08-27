@@ -1,64 +1,84 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import RollingGallery from "../src/components/ui/RollingGallery";
 import IntroImage from "../src/components/common/IntroImage";
-import Masonry from 'react-masonry-css';
+import Masonry from "react-masonry-css";
 import SEO from "../src/SEO";
 
+// Lazy load the masonry component for better performance
+const LazyMasonry = lazy(() => import("react-masonry-css"));
 
 const EventGallery = () => {
   const [expandedImage, setExpandedImage] = useState(null);
+  const [loadedImages, setLoadedImages] = useState(new Set());
 
   const events = [
     {
       id: 1,
       title: "Annual Stakeholders Meet 2023",
       location: "Vivanta, BBSR",
-      description: "Our annual gathering with stakeholders to discuss progress and future strategies",
+      description:
+        "Our annual gathering with stakeholders to discuss progress and future strategies",
       images: [
-        { id: 1, url: "https://quotus.co.in/static/media/an1.d2c8a80f904b2c753950.jpg", size: "wide" },
-        { id: 2, url: "https://quotus.co.in/static/media/an2.dfc933bac6e943654bac.jpg", size: "tall" },
-        { id: 3, url: "https://quotus.co.in/static/media/an3.f1a0309d6206ca740735.jpg", size: "wide" },
-        { id: 4, url: "https://quotus.co.in/static/media/an4.ce6e34c06d0b0301d34b.jpg", size: "regular" },
-        { id: 5, url: "https://quotus.co.in/static/media/an5.f049d0cb799ec713f39f.jpg", size: "tall" },
-        { id: 6, url: "https://quotus.co.in/static/media/an6.ac74e8a11bf9125587e7.jpg", size: "wide" },
-        { id: 7, url: "https://quotus.co.in/static/media/an7.6a2c25a45d9f34435a66.jpg", size: "regular" },
-        { id: 8, url: "https://quotus.co.in/static/media/an8.8c1049b32bb4364051d0.jpg", size: "tall" },
-        { id: 9, url: "https://quotus.co.in/static/media/an9.4f1bddb802ab850c66b4.jpg", size: "wide" },
-
-      ]
+        {
+          id: 1,
+          url: "/galleryData/stakeholdersMeet2023/img1.jpg",
+          size: "wide",
+        },
+        {
+          id: 2,
+          url: "/galleryData/stakeholdersMeet2023/img2.jpg",
+          size: "tall",
+        },
+        {
+          id: 3,
+          url: "/galleryData/stakeholdersMeet2023/img3.jpg",
+          size: "wide",
+        },
+        {
+          id: 4,
+          url: "/galleryData/stakeholdersMeet2023/img4.jpg",
+          size: "regular",
+        },
+        {
+          id: 5,
+          url: "/galleryData/stakeholdersMeet2023/img5.jpg",
+          size: "tall",
+        },
+        {
+          id: 6,
+          url: "/galleryData/stakeholdersMeet2023/img6.jpg",
+          size: "wide",
+        },
+        {
+          id: 7,
+          url: "/galleryData/stakeholdersMeet2023/img7.jpg",
+          size: "regular",
+        },
+        {
+          id: 8,
+          url: "/galleryData/stakeholdersMeet2023/img8.jpg",
+          size: "tall",
+        },
+        {
+          id: 9,
+          url: "/galleryData/stakeholdersMeet2023/img9.jpg",
+          size: "wide",
+        },
+      ],
     },
-    // {
-    //   id: 2,
-    //   title: "Campus Drive at GITA",
-    //   location: "GITA Autonomous College, BBSR",
-    //   description: "Recruiting bright young talents from premier institutions",
-    //   images: [
-    //     { id: 1, url: "https://quotus.co.in/static/media/GITA.7e869011955340eb0e07.jpeg", size: "regular" },
-    //     { id: 2, url: "https://quotus.co.in/static/media/GITA.7e869011955340eb0e07.jpeg", size: "tall" },
-    //     { id: 3, url: "https://quotus.co.in/static/media/gita3.daf913ae391123efa29a.jpeg", size: "wide" }
-    //   ]
-    // },
-    // {
-    //   id: 3,
-    //   title: "Ganesh Chaturthi Celebration",
-    //   location: "Office, BBSR",
-    //   description: "Traditional festival celebration fostering team bonding",
-    //   images: [
-    //     { id: 1, url: "https://quotus.co.in/static/media/DSC_0016.f2f6cbf50ef01c1f35f0.JPG", size: "big" },
-    //     { id: 2, url: "https://quotus.co.in/static/media/DSC_0022.2fde24bafdcfacb99272.JPG", size: "regular" },
-    //     { id: 3, url: "https://quotus.co.in/static/media/DSC_0024.bef4e857002fa41cceb0.JPG", size: "regular" }
-    //   ]
-    // },
-
   ];
 
   const getSizeClass = (size) => {
     switch (size) {
-      case 'wide': return 'col-span-2';
-      case 'tall': return 'row-span-2';
-      case 'big': return 'col-span-2 row-span-2';
-      default: return '';
+      case "wide":
+        return "col-span-2";
+      case "tall":
+        return "row-span-2";
+      case "big":
+        return "col-span-2 row-span-2";
+      default:
+        return "";
     }
   };
 
@@ -70,15 +90,19 @@ const EventGallery = () => {
     setExpandedImage(null);
   };
 
-  //misonry breakpoint
+  const handleImageLoad = (eventId, imageId) => {
+    setLoadedImages((prev) => new Set(prev).add(`${eventId}-${imageId}`));
+  };
+
+  // Masonry breakpoint
   const breakpointColumnsObj = {
     default: 3,
     1024: 2,
-    640: 1
+    640: 1,
   };
 
   return (
-    <div className="min-h-screen bg-white  mt-[5%]">
+    <div className="min-h-screen bg-white mt-[5%]">
       <SEO
         title="Gallery | Quotus Software Solutions"
         description="Contact Quotus Software Solutions for blockchain, AI, SaaS, and custom software development. Reach out to our team for inquiries, collaborations, or support."
@@ -87,14 +111,14 @@ const EventGallery = () => {
         url="https://quotus.io/gallery"
       />
 
-      {/* intro image*/}
+      {/* Intro image */}
       <IntroImage title="Our Gallery" imageUrl="/commonEntroImage.jpg" />
 
       <RollingGallery images={events[0].images} />
 
       <div className="py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Events Gallery */}
-        <div className=" space-y-20">
+        <div className="space-y-20">
           {events.map((event) => (
             <motion.div
               key={event.id}
@@ -135,41 +159,57 @@ const EventGallery = () => {
                 <p className="text-gray-600">{event.description}</p>
               </div>
 
-              {/* Images Grid */}
-              <Masonry
-                breakpointCols={breakpointColumnsObj}
-                className="flex gap-4 p-6 my-masonry-grid "
-                columnClassName="my-masonry-grid_column"
+              {/* Images Grid with Lazy Loading */}
+              <Suspense
+                fallback={<div className="p-6">Loading gallery...</div>}
               >
-                {event.images.map((image) => (
-                  <motion.div
-                    key={image.id}
-                    className={`relative overflow-hidden rounded-lg shadow-sm border border-gray-200  ${getSizeClass(
-                      image.size
-                    )}`}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.02 }}
-                    onClick={() => openImage(event.id, image.id)}
-                  >
-                    <img
-                      src={image.url}
-                      alt={`${event.title} ${image.id}`}
-                      className="w-full h-auto object-cover cursor-pointer"
-                    />
-                    <div className="absolute inset-0 bg-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
-                      <span className="text-white font-medium">View</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </Masonry>
+                <Masonry
+                  breakpointCols={breakpointColumnsObj}
+                  className="flex gap-4 p-6 my-masonry-grid"
+                  columnClassName="my-masonry-grid_column"
+                >
+                  {event.images.map((image) => (
+                    <motion.div
+                      key={image.id}
+                      className={`relative overflow-hidden rounded-lg shadow-sm border border-gray-200 ${getSizeClass(
+                        image.size
+                      )}`}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02 }}
+                      onClick={() => openImage(event.id, image.id)}
+                    >
+                      {/* Low-quality placeholder */}
+                      {!loadedImages.has(`${event.id}-${image.id}`) && (
+                        <div className="w-full h-64 bg-gray-200 animate-pulse"></div>
+                      )}
+
+                      <img
+                        src={image.url}
+                        alt={`${event.title} ${image.id}`}
+                        className="w-full h-auto object-cover cursor-pointer"
+                        loading="lazy"
+                        onLoad={() => handleImageLoad(event.id, image.id)}
+                        style={{
+                          display: loadedImages.has(`${event.id}-${image.id}`)
+                            ? "block"
+                            : "none",
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span className="text-white font-medium">View</span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </Masonry>
+              </Suspense>
             </motion.div>
           ))}
         </div>
 
-        {/*  Image Modal */}
+        {/* Image Modal */}
         {expandedImage && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -179,7 +219,7 @@ const EventGallery = () => {
             onClick={closeImage}
           >
             <div
-              className="absolute top-6 right-6 text-[#513897] text-3xl z-10 hover:text-[#b8b2ff] transition-colors"
+              className="absolute top-6 right-6 text-[#513897] text-3xl z-10 hover:text-[#b8b2ff] transition-colors cursor-pointer"
               onClick={closeImage}
             >
               &times;
@@ -200,6 +240,7 @@ const EventGallery = () => {
                           initial={{ scale: 0.9 }}
                           animate={{ scale: 1 }}
                           transition={{ duration: 0.3 }}
+                          loading="eager" // Load modal image immediately
                         />
                       )
                   )

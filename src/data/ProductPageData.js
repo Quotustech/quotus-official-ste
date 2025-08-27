@@ -21,8 +21,7 @@ export const ourProducts = [
       navIcon: "/product/allProducts/naturopura/naturopura.png",
       pathUrl: "/product/naturopura",
       productUrl: "https://www.naturopura.in/",
-      bgImage:
-        "https://img.freepik.com/free-photo/green-tea-bud-leaves-green-tea-plantations-morning_335224-955.jpg?semt=ais_hybrid&w=740",
+      bgImage: "/product/allProducts/naturopura/bg.avif",
       heading: "Revolutionizing Agriculture with Blockchain & Drones",
       subheading: "Revolutionizing Agriculture with AI & Blockchain",
       description:
@@ -72,8 +71,7 @@ export const ourProducts = [
       ],
     },
     productBenefits: {
-      image:
-        "https://img.freepik.com/free-photo/green-tea-bud-leaves-green-tea-plantations-morning_335224-955.jpg?semt=ais_hybrid&w=740",
+      image: "/product/allProducts/naturopura/bg.avif",
       keyBenefits: [
         {
           id: 1,
