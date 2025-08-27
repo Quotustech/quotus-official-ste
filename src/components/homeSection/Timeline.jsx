@@ -44,7 +44,7 @@ const Timeline = () => {
 
 
   return (
-    <div className="bg-white py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 w-screen">
+    <div className="bg-white py-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 w-screen">
       {/*heading */}
       <motion.div
         className="text-center py-0 "

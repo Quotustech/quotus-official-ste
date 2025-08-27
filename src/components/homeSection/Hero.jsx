@@ -215,7 +215,7 @@ export default function HeroSection() {
               ],
             }}
             transition={{
-              duration: 300, // 5 minutes
+              duration: 500, // 5 minutes
               repeat: Infinity,
               ease: "linear",
             }}
@@ -334,13 +334,9 @@ export default function HeroSection() {
           })}
 
         {/* Glow Effects */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none ">
           <motion.div
-            className={`absolute top-1/2 left-1/2 ${getResponsiveValue(
-              "w-48 h-48",
-              "w-64 h-64",
-              "w-96 h-96 lg:w-[500px] lg:h-[500px]"
-            )} rounded-full bg-[#513897] blur-3xl opacity-10`}
+            className="absolute top-1/2 left-1/2 w-full h-full  rounded-full"
             animate={{
               scale: [1, 1.3, 1],
               opacity: [0.1, 0.12, 0.1],
@@ -353,7 +349,7 @@ export default function HeroSection() {
           />
           {screenSize.isDesktop && (
             <motion.div
-              className="absolute top-1/2 left-1/2 w-[300px] h-[300px] rounded-full bg-[#1f0079] blur-2xl opacity-5"
+              className="absolute top-1/2 left-1/2 w-full h-full rounded-full bg-[#1f0079] blur-2xl opacity-5"
               animate={{
                 scale: [1, 1.2, 1],
                 opacity: [0.05, 0.07, 0.05],
@@ -370,7 +366,7 @@ export default function HeroSection() {
       </div>
 
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden ">
         {/* Circuit Board Pattern */}
         <div
           className="absolute inset-0 opacity-5"

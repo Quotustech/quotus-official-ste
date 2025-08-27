@@ -84,7 +84,7 @@ function CTA() {
             {[
               { icon: <FiMail size={24} />, text: "info@quotus.co.in" },
               { icon: <FiPhone size={24} />, text: "+91 9777403555" },
-              { icon: <FiMessageSquare size={24} />, text: "Live Chat" },
+              // { icon: <FiMessageSquare size={24} />, text: "Live Chat" },
             ].map((item, i) => (
               <motion.div key={i} className="flex flex-col items-center group">
                 <div className="w-12 h-12 flex items-center justify-center bg-[#1f0079]/10 rounded-full text-[#1f0079] group-hover:bg-[#513897]/20 group-hover:text-[#513897] transition-colors duration-300 mb-2">

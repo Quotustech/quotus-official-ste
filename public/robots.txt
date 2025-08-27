@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://quotus.com/sitemap.xml
+Sitemap: https://quotus.co.in/sitemap.xml

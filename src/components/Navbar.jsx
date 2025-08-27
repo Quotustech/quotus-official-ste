@@ -82,7 +82,7 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       />
 
-      <div className="relative   px-4 py-3">
+      <div className="relative   px-0 md:px-4 pr-3  py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="z-10 block">

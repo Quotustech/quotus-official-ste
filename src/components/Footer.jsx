@@ -72,23 +72,26 @@ const Footer = () => {
             <p className="text-white leading-relaxed">
               Leading the way in digital innovation and transformation since 2021.
             </p>
-            <div className="flex space-x-4 ">
-              {[
-                <FiFacebook className="w-5 h-5 text-white " />,
-                <FiTwitter className="w-5 h-5 text-white " />,
-                <FiLinkedin className="w-5 h-5 text-white " />,
-                <FiInstagram className="w-5 h-5 text-white " />
-              ].map((icon, i) => (
-                <motion.a
-                  key={i}
-                  href="#"
-                  className="text-[#b8b2ff] hover:text-white transition-colors"
-                  whileHover={{ y: -3 }}
-                >
-                  {icon}
-                </motion.a>
-              ))}
-            </div>
+           <div className="flex space-x-4">
+  {[
+    // { icon: <FiFacebook className="w-5 h-5 text-white" />, url: "https://www.facebook.com/profile.php?id=100063524542612" },
+    // { icon: <FiTwitter className="w-5 h-5 text-white" />, url: "https://twitter.com/yourhandle" },
+    { icon: <FiLinkedin className="w-5 h-5 text-white" />, url: "https://www.linkedin.com/company/quotus-software" },
+    { icon: <FiInstagram className="w-5 h-5 text-white" />, url: "https://www.instagram.com/quotussoftware?igsh=YWQ3YWZzN2JlMmF1" }
+  ].map((item, i) => (
+    <motion.a
+      key={i}
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#b8b2ff] hover:text-white transition-colors"
+      whileHover={{ y: -3 }}
+    >
+      {item.icon}
+    </motion.a>
+  ))}
+</div>
+
           </motion.div>
 
           {/* Quick Links */}

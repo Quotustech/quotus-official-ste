@@ -1,25 +1,25 @@
 //clients msg
 export const testimonials = [
     {
-      img: "/home/ourClients/testimonials/client1.jpg",
+      img: "/home/ourClients/testimonials/man2.png",
       quote:
         "Working with Quotus Solutions transformed our development workflow. Their team delivered clean, scalable code that cut our project timeline by 40%.",
       name: "Rahul Mehta",
-      role: "Lead Developer, InnovateTech",
+      role: "Product Manager",
     },
     {
-      img: "/home/ourClients/testimonials/client2.jpg",
+      img: "/home/ourClients/testimonials/woman.png",
       quote:
         "Quotus Solutions truly understands the balance between design and usability. Their UI/UX execution helped our app feel polished and user-friendly from day one.",
       name: "Priya Sharma",
-      role: "Product Designer, Bloom Labs",
+      role: "Product Designer",
     },
     {
-      img: "/home/ourClients/testimonials/client3.jpg",
+      img: "/home/ourClients/testimonials/man.png",
       quote:
-        "From smart contract deployment to seamless frontend integration, Quotus Solutions delivered a full-stack blockchain product faster than we expected. Highly reliable team!",
+        "From smart contract deployment to seamless frontend integration, Quotus Solutions delivered a full-stack blockchain product faster than we expected. Highly reliable team",
       name: "Kunal Joshi",
-      role: "CTO, ChainNova",
+      role: "CTO",
     },
   ];  
 

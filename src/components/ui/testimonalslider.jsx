@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 
 export default function FancyTestimonialsSlider({ testimonials }) {
   const testimonialsRef = useRef(null);
-  const containerRef = useRef(null); // ✅ Declare containerRef
+  const containerRef = useRef(null);
   const [active, setActive] = useState(0);
   const [autorotate, setAutorotate] = useState(true);
   const autorotateTiming = 7000;
@@ -43,7 +43,7 @@ export default function FancyTestimonialsSlider({ testimonials }) {
                 }`}
               >
                 <img
-                  className="relative top-11 rounded-full w-20 h-20 object-cover border-2 border-[#513897]"
+                  className="relative top-11 rounded-full w-20 h-20 object-cover border-2 border-[#321f67]  "
                   src={testimonial.img}
                   alt={testimonial.name}
                   loading="lazy"

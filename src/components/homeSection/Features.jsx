@@ -33,7 +33,7 @@ const FeatureCard = ({ icon, title, description, delay }) => {
         initial={{ rotate: -15, scale: 0.9 }}
         animate={inView ? { rotate: 0, scale: 1 } : {}}
         whileHover={{
-          rotate: [0, -3, 3, 0],
+          
           transition: { duration: 0.4 },
         }}
         transition={{
@@ -80,7 +80,7 @@ const FeatureCard = ({ icon, title, description, delay }) => {
 
 const FeaturesSection = () => {
   return (
-    <div className="py-20  bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <div className="py-0 md:py-15  bg-white px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
