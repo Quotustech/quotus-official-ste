@@ -90,7 +90,7 @@ function CTA() {
                 <div className="w-12 h-12 flex items-center justify-center bg-[#1f0079]/10 rounded-full text-[#1f0079] group-hover:bg-[#513897]/20 group-hover:text-[#513897] transition-colors duration-300 mb-2">
                   {item.icon}
                 </div>
-                <span className="hidden text-xs md:block  md:text-base text-[#1f0079]/80 group-hover:text-[#513897] transition-colors duration-300 w-[10vw]">
+                <span className="hidden text-xs md:block  md:text-base text-[#1f0079]/80 group-hover:text-[#513897] transition-colors duration-300 w-[15vw]">
                   {item.text}
                 </span>
               </motion.div>

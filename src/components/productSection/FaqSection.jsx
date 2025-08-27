@@ -36,7 +36,7 @@ const FaqSection = ({productData}) => {
 
   return (
     <section className="py-10  bg-white">
-      <div className="max-w-7xl mx-auto">
+      <div className="">
         {/* Animated Header with SVG Background */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -49,7 +49,7 @@ const FaqSection = ({productData}) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-2xl sm:text-2xl font-bold text-white mb-6"
+            className="text-lg sm:text-2xl font-bold text-white mb-6 text-center"
           >
             {productData.description}
           </motion.h2>
@@ -122,7 +122,7 @@ const FaqSection = ({productData}) => {
                         }`}
                     >
                       <div className="flex items-start justify-between">
-                        <h3 className="text-lg font-semibold text-gray-900 pr-4">
+                        <h3 className="text-md md:text-lg font-semibold text-gray-900 pr-4">
                           {faq.question}
                         </h3>
                         <motion.div

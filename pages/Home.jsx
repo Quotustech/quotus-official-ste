@@ -8,6 +8,8 @@ import Timeline from "../src/components/homeSection/Timeline";
 import CompanyVisionMission from "../src/components/homeSection/CompanyVisionMission";
 import { useRef } from "react";
 import { useScroll } from "framer-motion";
+import {quotusFAQ} from "../src/data/homePageFAQ";
+import FaqSection from "../src/components/productSection/FaqSection";
 import  SEO  from "../src/SEO";
 
 
@@ -37,6 +39,9 @@ function Home() {
       <Stats />
       <OurClients />
       <CTA />
+      <div className="p-0 lg:p-10 w-screen ">
+        <FaqSection productData={quotusFAQ[0].faqSection} />
+      </div>
     </div>
   );
 }
