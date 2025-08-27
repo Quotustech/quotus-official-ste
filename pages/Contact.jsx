@@ -38,8 +38,8 @@ const ContactSection = () => {
         title="Contact Quotus Software Solutions | Get in Touch"
         description="Contact Quotus Software Solutions for blockchain, AI, SaaS, and custom software development. Reach out to our team for inquiries, collaborations, or support."
         keywords="Quotus contact, contact software company, get in touch Quotus, blockchain solutions contact, AI development contact, SaaS company contact, enterprise IT contact"
-        image="https://quotus.io/QuotusLOGO.png"
-        url="https://quotus.io/contact"
+        image="https://quotus.co.in/QuotusLOGO.png"
+        url="https://quotus.co.in/contact"
       />
 
       <div className="">

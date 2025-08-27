@@ -12,8 +12,8 @@ function BlockchainDevelopment() {
         title="Blockchain Development Services | Quotus Software Solutions"
         description="Leverage blockchain technology with Quotus Software Solutions. From smart contracts to DApps, we build secure, scalable, and future-ready blockchain solutions."
         keywords="blockchain development, smart contracts, DApps, DeFi solutions, enterprise blockchain, Quotus blockchain"
-        image="https://quotus.io/QuotusLOGO.png"
-        url="https://quotus.io/services/blockchain-development"
+        image="https://quotus.co.in/QuotusLOGO.png"
+        url="https://quotus.co.in/services/blockchain-development"
       />
 
       <CommonSection data={blockchainPageData} />

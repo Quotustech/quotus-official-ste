@@ -21,10 +21,10 @@ const AboutUs3D = () => {
     <div ref={containerRef} className="relative ">
       <SEO
         title="About Us | Quotus Software Solutions"
-        description="Learn about Quotus – a software Solutions building innovative blockchain, AI, and SaaS products. Discover our mission, team, and journey in enterprise software development."
+        description="Learn about Quotus  a software Solutions building innovative blockchain, AI, and SaaS products. Discover our mission, team, and journey in enterprise software development."
         keywords="Quotus, about Quotus, Quotus team, software Solutions, blockchain experts, AI software developers, enterprise IT, company mission, software consulting, technology innovation"
-        image="http://quotus.io/QuotusLOGO.png"
-        url="https://quotus.io/about"
+        image="https://quotus.co.in/QuotusLOGO.png"
+        url="https://quotus.co.in/about"
       />
 
       {/* intro image*/}

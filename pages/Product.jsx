@@ -20,7 +20,7 @@ function Product() {
       .toLowerCase();
 
     if (!subPath) {
-      console.log("No subpath — you're on the main product page.");
+      // console.log("No subpath — you're on the main product page.");
       return;
     }
 
@@ -29,7 +29,7 @@ function Product() {
     );
 
     if (matchedProduct) {
-      console.log("Matched product:", matchedProduct);
+      // console.log("Matched product:", matchedProduct);
       setProductData(matchedProduct);
     } else {
       console.log("No matching product found for:", subPath);

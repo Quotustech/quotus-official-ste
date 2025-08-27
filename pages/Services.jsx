@@ -29,7 +29,7 @@ const ServicesPage = ({ onClose }) => {
   };
 
   const handleNavigationToSubHeadings = (path,id) => {
-    console.log(path,id)
+    // console.log(path,id)
     navigate(path, { state: { scrollTo: id } });
     onClose(); 
   };

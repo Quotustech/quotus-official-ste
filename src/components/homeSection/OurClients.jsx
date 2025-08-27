@@ -102,109 +102,162 @@ function OurClients() {
       </div>
 
       {/* Clients */}
-      <div className="flex flex-col justify-center items-center mb-16 ">
-        <motion.h2
-          className="text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-[#1f0079] mb-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+      <div className="flex flex-col justify-center items-center relative overflow-hidden py-12">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute -top-40 -right-20 w-80 h-80 bg-gradient-to-br from-[#1f0079]/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-gradient-to-tr from-[#513897]/5 to-transparent rounded-full blur-3xl"></div>
+        </div>
+
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
         >
-          <motion.span
-            className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] to-[#513897]"
-            initial={{ backgroundPosition: "0% 50%" }}
-            animate={{
-              backgroundPosition: "100% 50%",
-              transition: {
-                duration: 6,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "linear",
-              },
-            }}
+          <motion.h2
+            className="text-4xl sm:text-3xl md:text-4xl font-bold mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
           >
-            Our
-          </motion.span>{" "}
-          <motion.span
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
+            <motion.span
+              className="bg-clip-text text-transparent bg-gradient-to-r from-[#1f0079] via-[#6e40c9] to-[#513897]"
+              initial={{ backgroundPosition: "0% 50%" }}
+              animate={{
+                backgroundPosition: "100% 50%",
+                transition: {
+                  duration: 8,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "linear",
+                },
+              }}
+            >
+              Our Clients
+            </motion.span>
+            <motion.span
+              className="block mt-2 text-xl sm:text-2xl md:text-3xl font-medium text-gray-700"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              Trusted by Visionary Leaders
+            </motion.span>
+          </motion.h2>
+
+          <motion.div
+            className="flex justify-center mt-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
           >
-            Clients
-          </motion.span>
-        </motion.h2>
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 mt-5  w-full">
-          {/* Left side - Text content (30% width) */}
-          <div className="w-full md:w-4/10 space-y-4 ">
-            <h2 className="text-xl md:text-2xl font-bold text-[#1f0079]">
-              Trusted by{" "}
-              <span className="bg-gradient-to-r from-[#513897] to-[#1f0079] bg-clip-text text-transparent">
-                Industry Leaders
-              </span>
-            </h2>
-            <p className="text-gray-600 text-lg">
-              We partner with innovative companies to deliver exceptional
-              solutions.
+            <div className="w-24 h-1 bg-gradient-to-r from-[#1f0079] to-[#513897] rounded-full"></div>
+          </motion.div>
+        </motion.div>
+
+        <div className="flex flex-col text-center items-center w-full max-w-7xl px-4">
+          {/* Animated description */}
+          <motion.div
+            className="mb-16 relative"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            <div className="absolute -left-10 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-[#1f0079]/10 hidden md:block"></div>
+            <div className="absolute -right-10 top-1/2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-[#513897]/10 hidden md:block"></div>
+
+            <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed relative z-10">
+              We partner with{" "}
+              <span className="font-semibold text-[#1f0079]">
+                innovative companies
+              </span>{" "}
+              to deliver exceptional{" "}
+              <span className="font-semibold text-[#513897]">
+                transformative solutions
+              </span>{" "}
+              that drive growth and success.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Right side - Client logos (70% width) */}
-          <div className="w-full md:w-6/10 group mt-10 md:mt-0">
-            <div className="grid grid-cols-3 rounded-lg overflow-hidden">
-              {clients.slice(0, 12).map((client, index) => {
-                const isLeftCol = index % 3 === 0;
-                const rowIndex = Math.floor(index / 3);
-                const isMiddleRow = rowIndex === 1 || rowIndex === 2;
-                const isFirstMiddleRow = rowIndex === 1;
-                const isSecondMiddleRow = rowIndex === 2;
-
-                return (
+          {/* Client logos grid with enhanced design */}
+          <div className="w-full relative">
+            <motion.div
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 relative"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
+                },
+              }}
+            >
+              {clients.slice(0, 12).map((client, index) => (
+                <motion.div
+                  key={`client-${index}`}
+                  className="
+                      aspect-square flex items-center justify-center 
+                      bg-white rounded-2xl
+                      relative overflow-hidden
+                      group/item
+                      shadow-lg
+                      hover:shadow-xl
+                      transition-all duration-500
+                      border border-gray-100
+                      cursor-pointer
+                    "
+                  variants={{
+                    hidden: { opacity: 0, scale: 0.8, y: 20 },
+                    visible: { opacity: 1, scale: 1, y: 0 },
+                  }}
+                  whileHover={{
+                    y: -8,
+                    scale: 1.05,
+                    transition: { duration: 0.3 },
+                  }}
+                  onClick={() => {
+                    if (client.url) {
+                      window.open(client.url, "_blank", "noopener,noreferrer");
+                    }
+                  }}
+                  onKeyPress={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      window.open(client.url, "_blank", "noopener,noreferrer");
+                    }
+                  }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Visit ${client.name} website`}
+                >
+                  {/* Animated border */}
                   <div
-                    key={`client-${index}`}
-                    className={`
-            aspect-square flex items-center justify-center bg-white w-full h-30 p-0 m-0
-            relative overflow-hidden
-            ${
-              isLeftCol
-                ? "border-l-1 border-[#1f0079]/30 group-hover:border-transparent"
-                : ""
-            }
-            ${
-              isFirstMiddleRow
-                ? "border-t-1 border-b-1 border-[#1f0079]/30 group-hover:border-transparent"
-                : ""
-            }
-            ${
-              isSecondMiddleRow
-                ? "border-b-1 border-[#1f0079]/30 group-hover:border-transparent"
-                : ""
-            }
-          `}
+                    className="
+                      absolute inset-0 rounded-2xl transition-opacity duration-500
+                      "
                   >
-                    {/* Animated border for left column */}
-                    {isLeftCol && (
-                      <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-[#513897]/60 transform scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-500 ease-out" />
-                    )}
-                    {/* Animated borders for first middle row */}
-                    {isFirstMiddleRow && (
-                      <>
-                        <div className="absolute top-0 left-0 right-0 h-0.5 bg-[#513897]/60 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out" />
-                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#513897]/60 transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-out" />
-                      </>
-                    )}
-                    {/* Animated border for second middle row - only bottom border */}
-                    {isSecondMiddleRow && (
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#513897]/60 transform scale-x-0 group-hover:scale-x-100 origin-right transition-transform duration-500 ease-out" />
-                    )}
-                    <img
-                      src={client.image}
-                      alt={client.name}
-                      className="w-4/5 h-4/5 object-contain"
-                      loading="lazy"
-                    />
+                    <div className="w-full h-full bg-white rounded-[15px] flex items-center justify-center">
+                      <motion.img
+                        src={client.image}
+                        alt={client.name}
+                        className="w-4/5 h-4/5 object-contain"
+                        loading="lazy"
+                        whileHover={{
+                          scale: 1.15,
+                          transition: { duration: 0.3 },
+                        }}
+                      />
+                    </div>
                   </div>
-                );
-              })}
-            </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </div>
