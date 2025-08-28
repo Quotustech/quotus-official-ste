@@ -56,7 +56,7 @@ const Footer = () => {
         ))}
       </div>
 
-      <motion.div 
+      <motion.div
         className=" relative z-10"
         initial="hidden"
         whileInView="visible"
@@ -70,42 +70,50 @@ const Footer = () => {
               Quotus Software Solutions
             </h3>
             <p className="text-white leading-relaxed">
-              Leading the way in digital innovation and transformation since 2021.
+              Leading the way in digital innovation and transformation since
+              2021.
             </p>
-           <div className="flex space-x-4">
-  {[
-    // { icon: <FiFacebook className="w-5 h-5 text-white" />, url: "https://www.facebook.com/profile.php?id=100063524542612" },
-    // { icon: <FiTwitter className="w-5 h-5 text-white" />, url: "https://twitter.com/yourhandle" },
-    { icon: <FiLinkedin className="w-5 h-5 text-white" />, url: "https://www.linkedin.com/company/quotus-software" },
-    { icon: <FiInstagram className="w-5 h-5 text-white" />, url: "https://www.instagram.com/quotussoftware?igsh=YWQ3YWZzN2JlMmF1" }
-  ].map((item, i) => (
-    <motion.a
-      key={i}
-      href={item.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-[#b8b2ff] hover:text-white transition-colors"
-      whileHover={{ y: -3 }}
-    >
-      {item.icon}
-    </motion.a>
-  ))}
-</div>
-
+            <div className="flex space-x-4">
+              {[
+                // { icon: <FiFacebook className="w-5 h-5 text-white" />, url: "https://www.facebook.com/profile.php?id=100063524542612" },
+                // { icon: <FiTwitter className="w-5 h-5 text-white" />, url: "https://twitter.com/yourhandle" },
+                {
+                  icon: <FiLinkedin className="w-5 h-5 text-white" />,
+                  url: "https://www.linkedin.com/company/quotus-software",
+                },
+                {
+                  icon: <FiInstagram className="w-5 h-5 text-white" />,
+                  url: "https://www.instagram.com/quotussoftware?igsh=YWQ3YWZzN2JlMmF1",
+                },
+              ].map((item, i) => (
+                <motion.a
+                  key={i}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#b8b2ff] hover:text-white transition-colors"
+                  whileHover={{ y: -3 }}
+                >
+                  {item.icon}
+                </motion.a>
+              ))}
+            </div>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-bold text-white mb-6 pl-5">Quick Links</h3>
+            <h3 className="text-xl font-bold text-white mb-6 pl-5">
+              Quick Links
+            </h3>
             <ul className="space-y-4">
               {navItems.map((item) => (
-                <motion.li 
+                <motion.li
                   key={item.name}
                   whileHover={{ x: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <Link 
-                    to={item.href} 
+                  <Link
+                    to={item.href}
                     className="text-[#b8b2ff] hover:text-white transition-colors flex items-center group"
                   >
                     <span className="w-2 h-2 bg-[#b8b2ff] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -118,7 +126,9 @@ const Footer = () => {
 
           {/* Services */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-bold text-white mb-6 pl-5 bg-none">Services</h3>
+            <h3 className="text-xl font-bold text-white mb-6 pl-5 bg-none">
+              Services
+            </h3>
             <ul className="space-y-4">
               {servicesData.map((service) => (
                 <motion.li
@@ -138,41 +148,38 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-
           {/* Contact */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-bold text-white mb-6">Contact Us</h3>
             <address className="not-italic text-white space-y-4">
-              <motion.p 
+              <motion.p
                 className="leading-relaxed flex items-start"
                 whileHover={{ x: 5 }}
               >
-                <span className="mr-3 mt-1"><MdOutlineLocationOn size={22}/></span>
+                <span className="mr-3 mt-1">
+                  <MdOutlineLocationOn size={22} />
+                </span>
                 <span>
-                  Arena-3, 3rd Floor,<br />
-                  STPI ELITE Building, Gothapatna,<br />
+                  Arena-3, 3rd Floor,
+                  <br />
+                  STPI ELITE Building, Gothapatna,
+                  <br />
                   Khordha, Odisha - 751003
                 </span>
               </motion.p>
-              <motion.p
-                whileHover={{ x: 5 }}
-                className="flex items-center"
-              >
+              <motion.p whileHover={{ x: 5 }} className="flex items-center">
                 <FiMail className="mr-3" />
-                <Link 
-                  to="mailto:info@quotus.co.in" 
+                <Link
+                  to="mailto:info@quotus.co.in"
                   className="hover:text-white transition-colors"
                 >
                   info@quotus.co.in
                 </Link>
               </motion.p>
-              <motion.p
-                whileHover={{ x: 5 }}
-                className="flex items-center"
-              >
+              <motion.p whileHover={{ x: 5 }} className="flex items-center">
                 <FiPhone className="mr-3" />
-                <Link 
-                  to="tel:+919777403555" 
+                <Link
+                  to="tel:+919777403555"
                   className="hover:text-white transition-colors"
                 >
                   +91 9777403555
@@ -183,14 +190,16 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <motion.div 
+        <motion.div
           className="mt-16 pt-8 border-t border-[#513897]/50 text-center"
           variants={itemVariants}
         >
           <p className="text-white text-sm">
-            &copy; {new Date().getFullYear()} Quotus Technologies. All rights reserved.
+            &copy; {new Date().getFullYear()} Quotus Technologies. All rights
+            reserved.
             <span className=" mt-2 text-xs opacity-70 flex items-center justify-center">
-              Designed with &nbsp;<FaRegHeart /> &nbsp; in Quotus
+              Designed with &nbsp;
+              <FaRegHeart /> &nbsp; in Quotus
             </span>
           </p>
         </motion.div>

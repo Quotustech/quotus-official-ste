@@ -35,7 +35,7 @@ export const testimonials = [
       image: "/home/ourClients/flags/ind.jpg",
     },
     {
-      country: "Dubai",
+      country: "UAE",
       image: "/home/ourClients/flags/dubai.png", 
     },
     {

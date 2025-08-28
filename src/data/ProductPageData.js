@@ -359,7 +359,7 @@ export const ourProducts = [
       navIcon: "/product/allProducts/feedora/FEEDORLOGO.png",
       pathUrl: "/product/feedora",
       productUrl: "https://getfeedora.com/",
-      bgImage: "/product/allProducts/feedora/feedoraBg.jpeg",
+      bgImage: "/product/allProducts/feedora/feedoraBG.jpg",
       heading: "Create stunning widgets for your website",
       subheading: "Create stunning widgets for your website",
       description:
