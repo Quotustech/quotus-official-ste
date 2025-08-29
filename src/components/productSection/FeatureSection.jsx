@@ -8,7 +8,7 @@ const FeatureSection = ({ productData }) => {
   return (
     <section className=" bg-white mt-25 mb-15">
       <div className="max-w-7xl mx-auto">
-        {/* Animated Header */}
+        {/*  Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ const FeatureSection = ({ productData }) => {
           </motion.p>
         </motion.div>
 
-        {/* Enhanced Feature Grid */}
+        {/*  Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {productData.features.map((feature, index) => (
             <motion.div

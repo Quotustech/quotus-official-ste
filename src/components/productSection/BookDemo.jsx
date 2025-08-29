@@ -59,16 +59,11 @@ export const BookDemo = () => {
     },
   };
 
-  // Handle email input change
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  // Handle demo submission (placeholder)
+  // Handle demo submission 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add demo booking logic here (e.g., API call)
-    console.log('Demo booked with email:', email);
+    // Add demo
+    // console.log('Demo booked with email:', email);
     setEmail('');
   };
 

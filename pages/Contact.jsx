@@ -70,7 +70,7 @@ const ContactSection = () => {
               <ContactForm />
             </div>
 
-            {/* Contact Info & Map */}
+            {/* Contact  Map */}
             <div className="space-y-8">
               <Map />
             </div>

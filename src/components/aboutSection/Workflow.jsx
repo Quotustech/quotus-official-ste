@@ -84,7 +84,7 @@ const Workflow = () => {
             />
           </motion.div>
 
-          {/*  timeline - takes 2 cols on lg, full width on smaller */}
+          {/*  timeline  */}
           <motion.div 
             className="lg:col-span-2"
             initial={{ opacity: 0 }}

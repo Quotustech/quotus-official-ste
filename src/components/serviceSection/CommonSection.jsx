@@ -25,7 +25,7 @@ const CommonSection = ({ data }) => {
     return <div className="text-center text-red-500">Data not available</div>;
   }
 
-  // Enhanced animation variants
+  //  animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -110,7 +110,7 @@ const CommonSection = ({ data }) => {
     },
   ];
 
-  // Enhanced gradient text animation
+  //  gradient text animation
   const gradientTextVariants = {
     hidden: { backgroundPosition: "0% 50%" },
     visible: {
@@ -179,7 +179,7 @@ const CommonSection = ({ data }) => {
         </motion.div>
       </section>
 
-      {/* Section 2: What We Serve - Text Oriented */}
+      {/* Section 2: What We Serve  */}
       <section className="py-16 bg-white" id="subHeadings">
         <div className="">
           <motion.div

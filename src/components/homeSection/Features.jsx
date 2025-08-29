@@ -67,7 +67,7 @@ const FeatureCard = ({ icon, title, description, delay }) => {
         </motion.p>
       </div>
 
-      {/* Animated underline - positioned at bottom */}
+      {/* Animated underline  */}
       <motion.div
         className="h-0.5 bg-[#513897] mt-2"
         initial={{ width: 0 }}

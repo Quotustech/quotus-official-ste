@@ -22,7 +22,7 @@ function Map() {
             opacity: 1,
             transition: {
                 duration: 0.6,
-                ease: [0.16, 1, 0.3, 1], // Custom easing for smoother motion
+                ease: [0.16, 1, 0.3, 1], 
             },
         },
     };
@@ -115,7 +115,7 @@ function Map() {
                 viewport={{ once: true, margin: "-100px" }}
                 className="rounded-xl shadow-2xl overflow-hidden h-64 md:h-80 relative"
             >
-                {/* Replace with your actual map embed */}
+                {/* Replace with  map embed */}
                 <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">
                     <iframe
                         title="Quotus Office Location"

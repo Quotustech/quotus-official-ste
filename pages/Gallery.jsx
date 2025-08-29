@@ -5,7 +5,7 @@ import IntroImage from "../src/components/common/IntroImage";
 import Masonry from "react-masonry-css";
 import SEO from "../src/SEO";
 
-// Lazy load the masonry component for better performance
+
 const LazyMasonry = lazy(() => import("react-masonry-css"));
 
 const EventGallery = () => {
@@ -94,7 +94,7 @@ const EventGallery = () => {
     setLoadedImages((prev) => new Set(prev).add(`${eventId}-${imageId}`));
   };
 
-  // Masonry breakpoint
+  
   const breakpointColumnsObj = {
     default: 3,
     1024: 2,
@@ -159,7 +159,7 @@ const EventGallery = () => {
                 <p className="text-gray-600">{event.description}</p>
               </div>
 
-              {/* Images Grid with Lazy Loading */}
+              {/* Images  */}
               <Suspense
                 fallback={<div className="p-6">Loading gallery...</div>}
               >

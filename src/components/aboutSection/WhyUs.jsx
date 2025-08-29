@@ -13,7 +13,7 @@ const WhyChooseUs = () => {
     <section className="relative py-8  overflow-hidden pt-0 flex items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 ">
    
       <div className="w-screen">
-        {/* Section Header - Made more compact */}
+        {/* Section Header  */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
 
 
 
-        {/* Content Grid - Adjusted spacing */}
+        {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 items-center">
           {/* Left Column  */}
           <motion.div

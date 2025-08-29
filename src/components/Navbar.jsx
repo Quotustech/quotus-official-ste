@@ -47,9 +47,9 @@ export default function Navbar() {
         const element = document.createElement("span");
         element.style.visibility = "hidden";
         element.style.position = "absolute";
-        element.style.fontSize = "1rem"; // Match your font size
-        element.style.fontWeight = "500"; // Match your font weight
-        element.style.fontFamily = "inherit"; // Match your font family
+        element.style.fontSize = "1rem"; 
+        element.style.fontWeight = "500";
+        element.style.fontFamily = "inherit";
         element.textContent = item.name;
         document.body.appendChild(element);
         widths[item.name] = element.offsetWidth;
