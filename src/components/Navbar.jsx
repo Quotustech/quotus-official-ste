@@ -14,8 +14,8 @@ export const navItems = [
   { name: "Services", href: "/services/ui-ux-design", hasDropdown: true },
   { name: "Gallery", href: "/gallery" },
   { name: "Product", href: "/product/naturopura", hasDropdown: true },
+  { name:"Blogs",href:"/blogs"},
   { name: "Contact", href: "/contact" },
-  // { name: "Vlogs", href: "/vlogs" },
 ];
 
 

@@ -7,9 +7,9 @@ import Gallery from "../pages/Gallery";
 import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Product from "../pages/Product";
 import Contact from "../pages/Contact";
-import Vlog from "../pages/Vlog";
+import Blog from "../pages/Blog";
 import PageNotFound from "../pages/PageNotFound";
-
+import BlogPost from "../src/components/blogsSection/BlogPost"
 //services
 import WebDevelopment from "../src/components/serviceSection/WebDevelopment";
 import UiUxDesign from "../src/components/serviceSection/UiUxDesign";
@@ -47,7 +47,8 @@ export default function AppRoutes() {
       <Route path="/product/swiftrooms" element={<Product />} />
 
       <Route path="/contact" element={<Contact />} />
-      {/* <Route path="/vlogs" element={<Vlog />} /> */}
+      <Route path="/blogs" element={<Blog />} />
+      <Route path="/blogs/:slug" element={<BlogPost />} />
       {/* <Route path="/privacy-policy" element={<PrivacyPolicy />} /> */}
 
       {/* unmatched paths */}

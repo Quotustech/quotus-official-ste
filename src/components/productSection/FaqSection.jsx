@@ -34,6 +34,7 @@ const FaqSection = ({productData}) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+
   return (
     <section className="py-10  bg-white">
       <div className="">
