@@ -4,7 +4,7 @@ export const blogPosts = [
     title:
       "How AI Booking Agents Are Transforming the Hotel Booking Experience",
     excerpt:
-      "Discover how AI booking agents are revolutionizing hotel reservations with personalized experiences, 24/7 availability, and increased efficiency for both guests and hotels.",
+      "Explore the benefits of AI booking agents in the hotel booking experience - boost efficiency, guest satisfaction, and bookings with Quotus software solutions.",
     date: "September 15, 2025",
     company: "QUOTUS",
     category: "Hospitality Technology",
@@ -13,7 +13,7 @@ export const blogPosts = [
     image: "/blogs/img6.jpg",
     imageCaption:
       "AI booking agents provide seamless, personalized hotel reservation experiences",
-    author: "Quotus Sofware Solutions",
+    author: "Quotus Software Solutions",
     authorImage: "/blogs/profile.webp",
     // authorRole: "Senior Product Manager",
 

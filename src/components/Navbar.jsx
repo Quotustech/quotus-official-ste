@@ -11,10 +11,10 @@ import {ourProducts} from "../data/ProductPageData";
 
 export const navItems = [
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services/ui-ux-design", hasDropdown: true },
+  { name: "Services", href: "/services", hasDropdown: true },
   { name: "Gallery", href: "/gallery" },
-  { name: "Product", href: "/product/naturopura", hasDropdown: true },
-  { name:"Blogs",href:"/blogs"},
+  { name: "Product", href: "/product", hasDropdown: true },
+  { name: "Blogs", href: "/blogs" },
   { name: "Contact", href: "/contact" },
 ];
 

@@ -8,20 +8,6 @@ const ServicesPage = ({ onClose }) => {
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        onClose();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [onClose]);
-
 
   const handleNavigation = (path) => {
     navigate(path);
@@ -81,7 +67,7 @@ const ServicesPage = ({ onClose }) => {
         variants={containerVariants}
         className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[95vw] max-w-6xl bg-white shadow-2xl rounded-xl z-50 border border-gray-100 p-6 origin-top"
         style={{
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
         }}
       >
         {/* service menue on hover */}
@@ -89,18 +75,14 @@ const ServicesPage = ({ onClose }) => {
           {servicesData.map((service, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ 
-                backgroundColor: "rgba(249, 245, 255, 1)",
-                transition: { duration: 0.2 }
-              }}
-              className="group rounded-lg p-4 -m-4  "
+              className="group rounded-lg p-4 -m-4    hover:border-1 hover:border-[#846fcb]  "
             >
               <motion.div
                 whileHover={{ x: 3 }}
                 onClick={() => handleNavigation(service.path)}
-                className="font-semibold text-[#1f0079]  flex items-center gap-3 mb-3 cursor-pointer"
-              > 
-                <motion.span 
+                className="font-semibold text-[#1f0079]  flex items-center gap-3 mb-3 cursor-pointer "
+              >
+                <motion.span
                   whileHover={{ scale: 1.1 }}
                   className="p-2 bg-[#f0ebff] rounded-lg group-hover:bg-[#e0d6ff]"
                 >
@@ -115,7 +97,11 @@ const ServicesPage = ({ onClose }) => {
                   viewBox="0 0 20 20"
                   fill="currentColor"
                 >
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                    clipRule="evenodd"
+                  />
                 </motion.svg>
               </motion.div>
 
@@ -127,7 +113,8 @@ const ServicesPage = ({ onClose }) => {
                     whileHover="hover"
                     className="text-gray-600 cursor-pointer flex items-start "
                     onClick={(e) => {
-                      e.stopPropagation(); handleNavigationToSubHeadings(service.path,service.id)
+                      e.stopPropagation();
+                      handleNavigationToSubHeadings(service.path, service.id);
                     }}
                   >
                     <motion.svg
@@ -138,7 +125,11 @@ const ServicesPage = ({ onClose }) => {
                       viewBox="0 0 20 20"
                       fill="currentColor"
                     >
-                      <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                      <path
+                        fillRule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clipRule="evenodd"
+                      />
                     </motion.svg>
                     <span className="text-sm">{sub.title}</span>
                   </motion.li>
@@ -147,17 +138,17 @@ const ServicesPage = ({ onClose }) => {
             </motion.div>
           ))}
         </div>
-          {/**footer */}
+        {/**footer */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
-          animate={{ 
-            opacity: 1, 
+          animate={{
+            opacity: 1,
             y: 0,
-            transition: { delay: 0.3 }
+            transition: { delay: 0.3 },
           }}
           className="mt-6 pt-6 border-t border-gray-100"
         >
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => {
@@ -166,7 +157,8 @@ const ServicesPage = ({ onClose }) => {
             }}
             className="text-sm text-gray-500 inline-block cursor-pointer"
           >
-            Need help in choosing? <span className="text-[#513897] font-medium">Contact our team</span>
+            Need help in choosing?{" "}
+            <span className="text-[#513897] font-medium">Contact our team</span>
           </motion.div>
         </motion.div>
       </motion.div>

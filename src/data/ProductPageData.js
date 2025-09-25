@@ -1,5 +1,5 @@
- import { FcGoogle } from "react-icons/fc";
- import { FaRobot, FaLinkedin } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
+import { FaRobot, FaLinkedin } from "react-icons/fa";
 
 export const ourProducts = [
   {
@@ -369,7 +369,7 @@ export const ourProducts = [
     featureSection: {
       heading: "Everything You Need know about Feedora ",
       description:
-        "Feedora empowers your crypto gaming and web experiences with cutting-edge features designed for performance, scalability, and seamless integration. Whether you’re a developer, gamer, or brand, Feedora delivers the tools you need to grow and engage.",
+        "Build beautiful, customizable widgets in minutes. No coding required. Boost your website's engagement with our easy-to-use widget builder.",
       features: [
         {
           title: "Easy Installation",

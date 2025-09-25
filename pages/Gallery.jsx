@@ -35,14 +35,15 @@ const EventGallery = () => {
           url: "/galleryData/stakeholdersMeet2023/img3.jpg",
           size: "wide",
         },
-        {
-          id: 4,
-          url: "/galleryData/stakeholdersMeet2023/img4.jpg",
-          size: "regular",
-        },
+
         {
           id: 5,
           url: "/galleryData/stakeholdersMeet2023/img5.jpg",
+          size: "tall",
+        },
+        {
+          id: 4,
+          url: "/galleryData/stakeholdersMeet2023/img4.jpg",
           size: "tall",
         },
         {
@@ -55,15 +56,16 @@ const EventGallery = () => {
           url: "/galleryData/stakeholdersMeet2023/img7.jpg",
           size: "regular",
         },
-        {
-          id: 8,
-          url: "/galleryData/stakeholdersMeet2023/img8.jpg",
-          size: "tall",
-        },
+
         {
           id: 9,
           url: "/galleryData/stakeholdersMeet2023/img9.jpg",
           size: "wide",
+        },
+        {
+          id: 8,
+          url: "/galleryData/stakeholdersMeet2023/img8.jpg",
+          size: "tall",
         },
       ],
     },
@@ -166,14 +168,12 @@ const EventGallery = () => {
                 <Masonry
                   breakpointCols={breakpointColumnsObj}
                   className="flex gap-4 p-6 my-masonry-grid"
-                  columnClassName="my-masonry-grid_column"
+                  columnClassName="my-masonry-grid_column space-y-4"
                 >
                   {event.images.map((image) => (
                     <motion.div
                       key={image.id}
-                      className={`relative overflow-hidden rounded-lg shadow-sm border border-gray-200 ${getSizeClass(
-                        image.size
-                      )}`}
+                      className="relative overflow-hidden rounded-lg shadow-sm border border-gray-200 h-64" // Fixed height for uniformity
                       initial={{ opacity: 0, scale: 0.95 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5 }}
@@ -183,13 +183,13 @@ const EventGallery = () => {
                     >
                       {/* Low-quality placeholder */}
                       {!loadedImages.has(`${event.id}-${image.id}`) && (
-                        <div className="w-full h-64 bg-gray-200 animate-pulse"></div>
+                        <div className="w-full h-full bg-gray-200 animate-pulse"></div> // Full height placeholder
                       )}
 
                       <img
                         src={image.url}
                         alt={`${event.title} ${image.id}`}
-                        className="w-full h-auto object-cover cursor-pointer"
+                        className="w-full h-full object-cover cursor-pointer" // Full height and width with object-cover
                         loading="lazy"
                         onLoad={() => handleImageLoad(event.id, image.id)}
                         style={{
@@ -219,7 +219,7 @@ const EventGallery = () => {
             onClick={closeImage}
           >
             <div
-              className="absolute top-6 right-6 text-[#513897] text-3xl z-10 hover:text-[#b8b2ff] transition-colors cursor-pointer"
+              className="absolute top-6 right-6 text-[#513897] text-3xl z-10 hover:text-[#353159] transition-colors cursor-pointer"
               onClick={closeImage}
             >
               &times;

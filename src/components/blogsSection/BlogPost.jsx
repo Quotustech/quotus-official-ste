@@ -13,9 +13,8 @@ import {
   FaTag,
 } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import SEO from "../../SEO"
+import SEO from "../../SEO";
 import FaqSection from "../productSection/FaqSection";
-
 
 const BlogPost = () => {
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
@@ -79,8 +78,6 @@ const BlogPost = () => {
     },
   };
 
-
-
   const socialButtonVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -90,7 +87,6 @@ const BlogPost = () => {
     },
     hover: { scale: 1.1, transition: { duration: 0.2 } },
   };
-
 
   return (
     <div className="bg-white">
@@ -102,7 +98,7 @@ const BlogPost = () => {
         url="https://quotus.co.in/blogs/ai-booking-agents-for-hotel-industry"
       />
       <motion.div
-        className="min-h-screen  px-4 sm:px-6 lg:px-8 w-full mt-10"
+        className="min-h-screen  w-full mt-10"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
@@ -344,7 +340,7 @@ const BlogPost = () => {
               </h3>
 
               <div className="overflow-x-auto mb-8">
-                <table className="min-w-full lg:text-justify text-left ">
+                <table className="min-w-full  text-left ">
                   <thead>
                     <tr className="border border-gray-200">
                       <th className="px-4 py-3 text-left text-black font-medium border border-gray-200">
@@ -560,7 +556,7 @@ const BlogPost = () => {
                 Traditional Guest Journey vs. AI-Powered Guest Journey
               </h3>
               <div className="overflow-x-auto mb-6">
-                <table className="min-w-full border border-gray-300 border-collapse lg:text-justify text-left ">
+                <table className="min-w-full border border-gray-300 border-collapse  text-left ">
                   <thead>
                     <tr>
                       <th className="px-4 py-3 text-left text-sm font-medium text-black border border-gray-300">
@@ -749,7 +745,7 @@ const BlogPost = () => {
                 Hotels vs. Guests: Who Benefits More?
               </h3>
               <div className="overflow-x-auto mb-6">
-                <table className="min-w-full border border-gray-300 border-collapse lg:text-justify text-left ">
+                <table className="min-w-full border border-gray-300 border-collapse text-left ">
                   <thead>
                     <tr>
                       <th className="px-4 py-3 text-left text-sm font-medium text-black border border-gray-300">
@@ -939,7 +935,7 @@ const BlogPost = () => {
                 Benefits of AI Booking Agents in Action
               </h3>
               <div className="overflow-x-auto mb-6">
-                <table className="min-w-full border border-gray-300 border-collapse lg:text-justify text-left ">
+                <table className="min-w-full border border-gray-300 border-collapse  text-left ">
                   <thead>
                     <tr>
                       <th className="px-4 py-3 text-left text-sm font-medium text-black border border-gray-300">
@@ -1131,7 +1127,7 @@ const BlogPost = () => {
                 At a Glance: How AI Booking Agents Work
               </h3>
               <div className="overflow-x-auto mb-6">
-                <table className="min-w-full border border-gray-300 border-collapse lg:text-justify text-left ">
+                <table className="min-w-full border border-gray-300 border-collapse text-left ">
                   <thead>
                     <tr>
                       <th className="px-4 py-3 text-left text-sm font-medium text-black border border-gray-300">
@@ -1343,7 +1339,7 @@ const BlogPost = () => {
                 The result? Happier guests and higher margins.
               </p>
 
-              <table className="w-full border-collapse mb-6 border border-gray-300 lg:text-justify text-left ">
+              <table className="w-full border-collapse mb-6 border border-gray-300  text-left ">
                 <thead>
                   <tr className="border-b border-gray-300">
                     <th className="text-left p-3 text-black font-semibold border border-gray-300">
@@ -1520,7 +1516,7 @@ const BlogPost = () => {
               <h3 className="text-xl font-semibold mt-8 mb-4 text-black">
                 Quick Snapshot: Pros & Cons
               </h3>
-              <table className="w-full border-collapse mb-6 border border-gray-300 lg:text-justify text-left ">
+              <table className="w-full border-collapse mb-6 border border-gray-300  text-left ">
                 <thead>
                   <tr className="border-b border-gray-300">
                     <th className="text-left p-3 text-black font-semibold border border-gray-300">
@@ -1765,7 +1761,7 @@ const BlogPost = () => {
                 </li>
               </ul>
 
-              <table className="w-full border-collapse mb-6 border border-gray-300 lg:text-justify text-left ">
+              <table className="w-full border-collapse mb-6 border border-gray-300  text-left ">
                 <thead>
                   <tr className="border-b border-gray-300">
                     <th className="text-left p-3 text-black font-semibold border border-gray-300">

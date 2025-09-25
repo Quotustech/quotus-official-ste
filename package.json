@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build  && node generate-sitemap.js",
+    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -26,14 +27,15 @@
     "lucide-react": "^0.522.0",
     "motion": "^12.23.0",
     "prop-types": "^15.8.1",
-    "react": "^19.1.0",
+    "react": "^18.3.1",
     "react-countup": "^6.5.3",
-    "react-dom": "^19.1.0",
+    "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
     "react-masonry-css": "^1.0.16",
     "react-router-dom": "^7.6.2",
+    "react-snap": "^1.23.0",
     "react-vertical-timeline-component": "^3.5.3",
     "react-wrap-balancer": "^1.1.1",
     "tailwind-merge": "^3.3.1",
@@ -53,5 +55,26 @@
     "sitemap": "^8.0.0",
     "tw-animate-css": "^1.3.4",
     "vite": "^6.3.5"
-  }
+  },
+  "reactSnap": {
+  "source": "dist",
+  "include": [
+    "/",
+    "/about",
+    "/gallery",
+    "/contact",
+    "/blogs",
+    "/services/ui-ux-design",
+    "/services/web-development",
+    "/services/mobile-app-development",
+    "/services/blockchain-development",
+    "/services/ai-solutions",
+    "/product/naturopura",
+    "/product/arthaProAi",
+    "/product/feedora",
+    "/product/swiftrooms"
+  ],
+  "inlineCss": true
+}
+
 }
