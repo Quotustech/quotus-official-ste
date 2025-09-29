@@ -14,21 +14,21 @@ const FaqSection = ({productData}) => {
 
   const filteredFaqs = useMemo(() => {
     let result = productData.faqs;
-
     if (activeCategory !== "All") {
-      result = result.filter(faq => faq.category === activeCategory);
+      result = result.filter((faq) => faq.category === activeCategory);
     }
 
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
-      result = result.filter(faq =>
-        faq.question.toLowerCase().includes(query) ||
-        faq.answer.toLowerCase().includes(query)
+      result = result.filter(
+        (faq) =>
+          faq.question.toLowerCase().includes(query) ||
+          faq.answer.toLowerCase().includes(query)
       );
     }
 
     return result;
-  }, [activeCategory, searchQuery]);
+  }, [productData,activeCategory, searchQuery]);
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);

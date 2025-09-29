@@ -59,7 +59,7 @@ const ContactSection = () => {
               variants={item}
               className="text-lg text-[#513897] max-w-2xl mx-auto"
             >
-              Have questions or ready to start your project? Reach out to our
+              Have questions or ready to start your project ? Reach out to our
               team today.
             </motion.p>
           </motion.div>

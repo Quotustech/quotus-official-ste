@@ -55,7 +55,7 @@ function ContactForm() {
   };
 
   return (
-    <div className='h-full relative'>
+    <div className="h-full relative">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -82,7 +82,10 @@ function ContactForm() {
           <motion.div className="absolute inset-0 p-8 md:p-10">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-1">
-                <label htmlFor="name" className="block text-sm font-medium text-[#513897]">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-[#513897]"
+                >
                   Your Name
                 </label>
                 <motion.input
@@ -92,7 +95,7 @@ function ContactForm() {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-[#e0d6ff] focus:border-[#513897] focus:ring-2 focus:ring-[#b8b2ff] transition-all"
-                  placeholder="John Doe"
+                  placeholder="Enter Your Name"
                   required
                   whileFocus={{
                     scale: 1.01,
@@ -102,7 +105,10 @@ function ContactForm() {
               </div>
 
               <div className="space-y-1">
-                <label htmlFor="email" className="block text-sm font-medium text-[#513897]">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-[#513897]"
+                >
                   Email Address
                 </label>
                 <motion.input
@@ -112,7 +118,7 @@ function ContactForm() {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-[#e0d6ff] focus:border-[#513897] focus:ring-2 focus:ring-[#b8b2ff] transition-all"
-                  placeholder="john@example.com"
+                  placeholder="Enter Your Mail ID"
                   required
                   whileFocus={{
                     scale: 1.01,
@@ -122,7 +128,10 @@ function ContactForm() {
               </div>
 
               <div className="space-y-1">
-                <label htmlFor="subject" className="block text-sm font-medium text-[#513897]">
+                <label
+                  htmlFor="subject"
+                  className="block text-sm font-medium text-[#513897]"
+                >
                   Subject
                 </label>
                 <motion.input
@@ -142,7 +151,10 @@ function ContactForm() {
               </div>
 
               <div className="space-y-1">
-                <label htmlFor="message" className="block text-sm font-medium text-[#513897]">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-[#513897]"
+                >
                   Message
                 </label>
                 <motion.textarea
@@ -162,8 +174,8 @@ function ContactForm() {
               </div>
 
               <RippleButton>
-                <button 
-                  className='flex gap-5 justify-center text-center items-center w-screen' 
+                <button
+                  className="flex gap-5 justify-center text-center items-center w-screen"
                   type="submit"
                   disabled={isSending}
                 >

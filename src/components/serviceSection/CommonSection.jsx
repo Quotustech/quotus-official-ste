@@ -11,7 +11,7 @@ const CommonSection = ({ data }) => {
   //scroll to what we serve section
   useEffect(() => {
     const targetId = location.state?.scrollTo;
-    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",location.state)
+    // console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>",location.state)
     if (targetId) {
       const el = document.getElementById(targetId);
       if (el) {
@@ -178,10 +178,11 @@ const CommonSection = ({ data }) => {
             )}
           </motion.div>
         </motion.div>
+        <div id="subHeadings"></div>
       </section>
 
       {/* Section 2: What We Serve  */}
-      <section className="py-16 bg-white" id="subHeadings">
+      <section className="py-16 bg-white" >
         <div className="">
           <motion.div
             initial="hidden"

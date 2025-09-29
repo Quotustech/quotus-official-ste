@@ -36,11 +36,11 @@ export const testimonials = [
     },
     {
       country: "UAE",
-      image: "/home/ourClients/flags/dubai.png", 
+      image: "/home/ourClients/flags/dubai.png",
     },
     {
-      country: "Europe",
-      image: "/home/ourClients/flags/eu.png", 
+      country: "Bahrain",
+      image: "/home/ourClients/flags/bahrain.jpg",
     },
     {
       country: "Philippines",

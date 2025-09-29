@@ -12,6 +12,8 @@ import {
   FaUser,
   FaTag,
 } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import SEO from "../../SEO";
 import FaqSection from "../productSection/FaqSection";
@@ -43,12 +45,12 @@ const BlogPost = () => {
       url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
       color: "text-[#0077B5]",
     },
-    {
-      name: "Instagram",
-      icon: <FaInstagram className="text-[20px] sm:text-[26px]" />,
-      url: `https://www.instagram.com/`,
-      color: "text-[#E1306C]",
-    },
+    // {
+    //   name: "Instagram",
+    //   icon: <FaInstagram className="text-[20px] sm:text-[26px]" />,
+    //   url: `https://www.instagram.com/`,
+    //   color: "text-[#E1306C]",
+    // },
     {
       name: "Facebook",
       icon: <FaFacebook className="text-[20px] sm:text-[26px]" />,
@@ -57,9 +59,9 @@ const BlogPost = () => {
     },
     {
       name: "Twitter",
-      icon: <FaTwitter className="text-[20px] sm:text-[26px]" />,
+      icon: <FaSquareXTwitter className="text-[20px] sm:text-[26px]" />,
       url: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
-      color: "text-[#1DA1F2]",
+      color: "text-[#111]",
     },
   ];
 

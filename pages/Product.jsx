@@ -31,6 +31,7 @@ function Product() {
     if (matchedProduct) {
       // console.log("Matched product:", matchedProduct);
       setProductData(matchedProduct);
+      // console.log("Product Data:", matchedProduct);
     } else {
       console.log("No matching product found for:", subPath);
     }
