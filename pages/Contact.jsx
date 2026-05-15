@@ -53,7 +53,7 @@ const ContactSection = () => {
             whileInView="visible"
             variants={container}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-16"
+            className="text-center mb-6"
           >
             <motion.p
               variants={item}
@@ -64,7 +64,7 @@ const ContactSection = () => {
             </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12">
             {/* Contact Form */}
             <div>
               <ContactForm />

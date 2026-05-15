@@ -34,7 +34,7 @@ function Map() {
         whileInView="visible"
         variants={container}
         viewport={{ once: true, margin: "-100px" }}
-        className="bg-white rounded-xl shadow-2xl p-8 md:p-10"
+        className="bg-white rounded-xl  p-8 md:p-10"
       >
         <motion.h3
           variants={item}
@@ -111,7 +111,7 @@ function Map() {
           delay: 0.2,
         }}
         viewport={{ once: true, margin: "-100px" }}
-        className="rounded-xl shadow-2xl overflow-hidden h-64 md:h-80 relative"
+        className="rounded-xl  overflow-hidden h-64 md:h-80 relative"
       >
         {/* Replace with  map embed */}
         <div className="w-full h-96 rounded-lg overflow-hidden shadow-lg">

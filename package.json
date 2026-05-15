@@ -6,11 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build  && node generate-sitemap.js",
-    "postbuild": "react-snap",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-three/drei": "^10.3.0",
@@ -27,15 +27,14 @@
     "lucide-react": "^0.522.0",
     "motion": "^12.23.0",
     "prop-types": "^15.8.1",
-    "react": "^18.3.1",
+    "react": "^19.2.0",
     "react-countup": "^6.5.3",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.2.0",
     "react-helmet-async": "^2.0.5",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
     "react-masonry-css": "^1.0.16",
     "react-router-dom": "^7.6.2",
-    "react-snap": "^1.23.0",
     "react-vertical-timeline-component": "^3.5.3",
     "react-wrap-balancer": "^1.1.1",
     "tailwind-merge": "^3.3.1",
@@ -57,24 +56,24 @@
     "vite": "^6.3.5"
   },
   "reactSnap": {
-  "source": "dist",
-  "include": [
-    "/",
-    "/about",
-    "/gallery",
-    "/contact",
-    "/blogs",
-    "/services/ui-ux-design",
-    "/services/web-development",
-    "/services/mobile-app-development",
-    "/services/blockchain-development",
-    "/services/ai-solutions",
-    "/product/naturopura",
-    "/product/arthaProAi",
-    "/product/feedora",
-    "/product/swiftrooms"
-  ],
-  "inlineCss": true
-}
-
+    "source": "dist",
+    "include": [
+      "/",
+      "/about",
+      "/gallery",
+      "/contact",
+      "/blogs",
+      "/blogs/ai-booking-agents-for-hotel-industry",
+      "/services/ui-ux-design",
+      "/services/web-development",
+      "/services/mobile-app-development",
+      "/services/blockchain-development",
+      "/services/ai-solutions",
+      "/product/naturopura",
+      "/product/arthaProAi",
+      "/product/feedora",
+      "/product/swiftrooms"
+    ],
+    "inlineCss": true
+  }
 }

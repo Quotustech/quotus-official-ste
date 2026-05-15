@@ -34,10 +34,9 @@ const BlogPost = () => {
   };
 
   // Social media sharing URLs
-  const postUrl = `https://quotus.co.in/post/${currentPost.title}`;
+  const postUrl = `https://quotus.co.in/blogs/${currentPost.slug}`;
   const encodedUrl = encodeURIComponent(postUrl);
   const encodedTitle = encodeURIComponent(currentPost.title);
-
   const socialLinks = [
     {
       name: "LinkedIn",
